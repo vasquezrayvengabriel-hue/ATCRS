@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Payment | ATCRS</title>
+
+    <link rel="stylesheet"
+          href="../css/style.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+
+<body class="dashboard-page">
+
+
+<!-- =====================================================
+     STUDENT PORTAL HEADER
+===================================================== -->
+
+<header class="portal-header">
+
+    <div class="portal-brand">
+
+        <a href="dashboard.html"
+           class="brand">
+
+            <div class="brand-logo">
+
+                <img src="../images/dlsjbc-logo.png"
+                     alt="De La Salle John Bosco College Logo">
+
+            </div>
+
+            <div class="brand-text">
+
+                <strong>ATCRS</strong>
+
+                <span>
+                    De La Salle John Bosco College
+                </span>
+
+            </div>
+
+        </a>
+
+    </div>
+
+
+    <div class="portal-user">
+
+        <div class="portal-user-info">
+
+            <span>
+                Student Portal
+            </span>
+
+            <strong id="paymentHeaderName">
+                Student
+            </strong>
+
+        </div>
+
+
+        <button type="button"
+                class="logout-btn"
+                id="studentLogoutBtn">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            Logout
+
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     PORTAL LAYOUT
+===================================================== -->
+
+<div class="portal-layout">
+
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<aside class="portal-sidebar">
+
+
+    <div class="sidebar-profile">
+
+        <div class="sidebar-avatar">
+
+            <i class="fa-solid fa-user"></i>
+
+        </div>
+
+        <h3 id="sidebarStudentName">
+            Student
+        </h3>
+
+        <p>
+            Student Account
+        </p>
+
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+
+        <a href="dashboard.html">
+
+            <i class="fa-solid fa-gauge-high"></i>
+
+            <span>
+                Dashboard
+            </span>
+
+        </a>
+
+
+        <a href="profile.html">
+
+            <i class="fa-solid fa-user"></i>
+
+            <span>
+                My Profile
+            </span>
+
+        </a>
+
+
+        <a href="request.html">
+
+            <i class="fa-solid fa-file-circle-plus"></i>
+
+            <span>
+                Request Document
+            </span>
+
+        </a>
+
+
+        <a href="payment.html"
+           class="active">
+
+            <i class="fa-solid fa-credit-card"></i>
+
+            <span>
+                Payment
+            </span>
+
+        </a>
+
+
+        <a href="documents.html">
+
+            <i class="fa-solid fa-folder-open"></i>
+
+            <span>
+                My Documents
+            </span>
+
+        </a>
+
+
+        <div class="sidebar-divider"></div>
+
+
+        <a href="../index.html">
+
+            <i class="fa-solid fa-house"></i>
+
+            <span>
+                Public Website
+            </span>
+
+        </a>
+
+
+    </nav>
+
+</aside>
+
+
+
+<!-- =====================================================
+     MAIN CONTENT START
+===================================================== -->
+
+<main class="portal-main">
+
+
+    <div class="page-heading">
+
+        <div>
+
+            <span class="section-label">
+                PAYMENT SERVICES
+            </span>
+
+            <h1>
+                Payment
+            </h1>
+
+            <p>
+                Review your document request and complete the
+                prototype payment process.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+<!-- =====================================================
+     PAYMENT PROGRESS
+===================================================== -->
+
+<section class="request-progress-card">
+
+    <div class="request-progress">
+
+
+        <div class="progress-step completed">
+
+            <div class="progress-number">
+                <i class="fa-solid fa-check"></i>
+            </div>
+
+            <span>
+                Request
+            </span>
+
+        </div>
+
+
+        <div class="progress-line completed"></div>
+
+
+        <div class="progress-step active">
+
+            <div class="progress-number">
+                2
+            </div>
+
+            <span>
+                Payment
+            </span>
+
+        </div>
+
+
+        <div class="progress-line"></div>
+
+
+        <div class="progress-step">
+
+            <div class="progress-number">
+                3
+            </div>
+
+            <span>
+                Review
+            </span>
+
+        </div>
+
+
+        <div class="progress-line"></div>
+
+
+        <div class="progress-step">
+
+            <div class="progress-number">
+                4
+            </div>
+
+            <span>
+                Release
+            </span>
+
+        </div>
+
+
+    </div>
+
+</section>
+  <!-- =====================================================
+     PAYMENT SUMMARY
+===================================================== -->
+
+<section class="dashboard-card">
+
+    <div class="card-header">
+
+        <div>
+
+            <h2>
+
+                <i class="fa-solid fa-receipt"></i>
+
+                Payment Summary
+
+            </h2>
+
+            <p>
+                Review the document request that requires payment.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- REQUEST INFORMATION -->
+
+    <div class="payment-request-box">
+
+        <div class="payment-request-icon">
+
+            <i class="fa-solid fa-file-lines"></i>
+
+        </div>
+
+
+        <div class="payment-request-details">
+
+            <span>
+                Document Request
+            </span>
+
+            <h3 id="paymentDocumentName">
+                No pending request
+            </h3>
+
+            <p>
+                Request ID:
+                <strong id="paymentRequestId">
+                    —
+                </strong>
+            </p>
+
+        </div>
+
+
+        <div class="payment-status">
+
+            <span class="status-badge status-pending"
+                  id="paymentStatus">
+
+                Pending Payment
+
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- PAYMENT TABLE -->
+
+    <div class="payment-table-wrapper">
+
+        <table class="payment-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        Description
+                    </th>
+
+                    <th>
+                        Quantity
+                    </th>
+
+                    <th>
+                        Amount
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="paymentItems">
+
+                <tr>
+
+                    <td>
+                        Document Processing Fee
+                    </td>
+
+                    <td>
+                        <span id="paymentQuantity">
+                            1
+                        </span>
+                    </td>
+
+                    <td>
+                        ₱<span id="paymentAmount">
+                            0.00
+                        </span>
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+
+            <tfoot>
+
+                <tr>
+
+                    <td colspan="2">
+
+                        <strong>
+                            Total Amount
+                        </strong>
+
+                    </td>
+
+                    <td>
+
+                        <strong class="payment-total">
+
+                            ₱<span id="paymentTotal">
+                                0.00
+                            </span>
+
+                        </strong>
+
+                    </td>
+
+                </tr>
+
+            </tfoot>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PAYMENT METHOD
+===================================================== -->
+
+<section class="dashboard-card">
+
+    <div class="card-header">
+
+        <div>
+
+            <h2>
+
+                <i class="fa-solid fa-wallet"></i>
+
+                Payment Method
+
+            </h2>
+
+            <p>
+                Select a payment method for this prototype transaction.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <form id="paymentForm">
+
+
+        <div class="payment-method-grid">
+
+
+            <!-- ONLINE PAYMENT -->
+
+            <label class="payment-method-card">
+
+                <input type="radio"
+                       name="paymentMethod"
+                       value="Online Payment"
+                       required>
+
+                <div class="payment-method-content">
+
+                    <div class="payment-method-icon">
+
+                        <i class="fa-solid fa-credit-card"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Online Payment
+                        </strong>
+
+                        <span>
+                            Simulated online payment
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </label>
+
+
+
+            <!-- E-WALLET -->
+
+            <label class="payment-method-card">
+
+                <input type="radio"
+                       name="paymentMethod"
+                       value="E-Wallet">
+
+                <div class="payment-method-content">
+
+                    <div class="payment-method-icon">
+
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            E-Wallet
+                        </strong>
+
+                        <span>
+                            Simulated e-wallet payment
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </label>
+
+
+
+            <!-- PAYMENT AT REGISTRAR -->
+
+            <label class="payment-method-card">
+
+                <input type="radio"
+                       name="paymentMethod"
+                       value="Registrar Payment">
+
+                <div class="payment-method-content">
+
+                    <div class="payment-method-icon">
+
+                        <i class="fa-solid fa-building-columns"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Registrar Payment
+                        </strong>
+
+                        <span>
+                            Payment recorded by the Registrar
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </label>
+
+
+        </div>
+              <!-- =================================================
+             PAYMENT CONFIRMATION
+        ================================================== -->
+
+        <div class="payment-confirmation">
+
+
+            <div class="confirmation-icon">
+
+                <i class="fa-solid fa-circle-info"></i>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Prototype Payment
+                </h3>
+
+                <p>
+                    This ATCRS website is a prototype. No real money,
+                    bank account, credit card, or e-wallet transaction
+                    will be processed through this page.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             PAYMENT AGREEMENT
+        ================================================== -->
+
+        <div class="request-agreement">
+
+            <label>
+
+                <input type="checkbox"
+                       id="paymentAgreement"
+                       name="paymentAgreement"
+                       required>
+
+                <span>
+
+                    I understand that this is a simulated payment
+                    for the ATCRS prototype and I confirm that the
+                    displayed request and amount are correct.
+
+                </span>
+
+            </label>
+
+        </div>
+
+
+
+        <!-- =================================================
+             PAYMENT MESSAGE
+        ================================================== -->
+
+        <div id="paymentMessage"
+             class="form-message"
+             aria-live="polite">
+        </div>
+
+
+
+        <!-- =================================================
+             PAYMENT BUTTONS
+        ================================================== -->
+
+        <div class="form-actions">
+
+
+            <a href="request.html"
+               class="btn btn-secondary">
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                Back to Request
+
+            </a>
+
+
+            <button type="submit"
+                    class="btn btn-primary"
+                    id="payNowBtn">
+
+                <i class="fa-solid fa-lock"></i>
+
+                Proceed with Payment
+
+            </button>
+
+
+        </div>
+
+
+    </form>
+
+</section>
+
+
+
+<!-- =====================================================
+     PAYMENT RECEIPT
+===================================================== -->
+
+<section class="dashboard-card"
+         id="paymentReceipt"
+         style="display:none;">
+
+
+    <div class="card-header">
+
+        <div>
+
+            <h2>
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                Payment Successful
+
+            </h2>
+
+            <p>
+                Your prototype payment has been recorded.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="payment-receipt">
+
+
+        <div class="receipt-success-icon">
+
+            <i class="fa-solid fa-check"></i>
+
+        </div>
+
+
+        <h3>
+            Payment Recorded
+        </h3>
+
+
+        <p>
+            Your payment information has been saved to your
+            ATCRS student account.
+        </p>
+
+
+
+        <div class="receipt-details">
+
+
+            <div>
+
+                <span>
+                    Request ID
+                </span>
+
+                <strong id="receiptRequestId">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Payment Reference
+                </span>
+
+                <strong id="paymentReference">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Amount
+                </span>
+
+                <strong>
+                    ₱<span id="receiptAmount">
+                        0.00
+                    </span>
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Payment Method
+                </span>
+
+                <strong id="receiptMethod">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Payment Status
+                </span>
+
+                <strong class="status-approved">
+                    Paid
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="form-actions">
+
+
+            <a href="dashboard.html"
+               class="btn btn-primary">
+
+                <i class="fa-solid fa-gauge-high"></i>
+
+                Go to Dashboard
+
+            </a>
+
+
+            <a href="documents.html"
+               class="btn btn-secondary">
+
+                <i class="fa-solid fa-folder-open"></i>
+
+                My Documents
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+  
+<!-- =====================================================
+     PAYMENT INFORMATION
+===================================================== -->
+
+<section class="dashboard-card information-card">
+
+
+    <div class="card-header">
+
+        <div>
+
+            <h2>
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                Payment Information
+
+            </h2>
+
+        </div>
+
+    </div>
+
+
+
+    <ul class="information-list">
+
+
+        <li>
+
+            <i class="fa-solid fa-check"></i>
+
+            Review your document request before making a payment.
+
+        </li>
+
+
+        <li>
+
+            <i class="fa-solid fa-check"></i>
+
+            The amount shown on this page is associated with
+            your selected document request.
+
+        </li>
+
+
+        <li>
+
+            <i class="fa-solid fa-check"></i>
+
+            Keep your payment reference number for future reference.
+
+        </li>
+
+
+        <li>
+
+            <i class="fa-solid fa-check"></i>
+
+            Payment status can be viewed from your Student Dashboard.
+
+        </li>
+
+
+        <li>
+
+            <i class="fa-solid fa-check"></i>
+
+            The Registrar can review payment status from the
+            private Registrar portal.
+
+        </li>
+
+
+        <li>
+
+            <i class="fa-solid fa-check"></i>
+
+            This GitHub Pages prototype does not process real payments.
+
+        </li>
+
+
+    </ul>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     CLOSE MAIN CONTENT
+===================================================== -->
+
+</main>
+
+</div>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="portal-footer">
+
+
+    <div class="footer-brand">
+
+
+        <img src="../images/dlsjbc-logo.png"
+             alt="De La Salle John Bosco College Logo">
+
+
+        <div>
+
+            <strong>
+                ATCRS
+            </strong>
+
+            <span>
+                De La Salle John Bosco College
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="footer-links">
+
+
+        <a href="../terms.html">
+            Terms of Use
+        </a>
+
+
+        <a href="../policy.html">
+            Policy
+        </a>
+
+
+        <a href="../index.html">
+            Public Website
+        </a>
+
+
+    </div>
+
+
+
+    <p>
+
+        © 2026 De La Salle John Bosco College.
+        All Rights Reserved.
+
+    </p>
+
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="../js/script.js"></script>
+
+
+</body>
+
+</html>
