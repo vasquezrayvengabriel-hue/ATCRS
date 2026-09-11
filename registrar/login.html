@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Registrar Login | ATCRS</title>
+
+
+    <!-- GOOGLE FONT -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+
+    <!-- FONT AWESOME -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+    <!-- MAIN CSS -->
+
+    <link rel="stylesheet"
+          href="../css/style.css">
+
+</head>
+
+
+<body class="auth-page">
+
+
+<!-- =====================================================
+     AUTHENTICATION HEADER
+===================================================== -->
+
+<header class="auth-header">
+
+
+    <a href="../index.html"
+       class="brand">
+
+
+        <div class="brand-logo">
+
+            <img src="../images/dlsjbc-logo.png"
+                 alt="De La Salle John Bosco College Logo">
+
+        </div>
+
+
+        <div class="brand-text">
+
+            <strong>
+                ATCRS
+            </strong>
+
+            <span>
+                De La Salle John Bosco College
+            </span>
+
+        </div>
+
+
+    </a>
+
+
+    <a href="../index.html"
+       class="auth-home-link">
+
+        <i class="fa-solid fa-house"></i>
+
+        Public Website
+
+    </a>
+
+
+</header>
+
+
+
+<!-- =====================================================
+     REGISTRAR LOGIN CONTENT
+===================================================== -->
+
+<main class="auth-container">
+
+
+    <section class="auth-card registrar-auth-card">
+
+
+        <!-- LOGO -->
+
+        <div class="auth-logo">
+
+            <img src="../images/dlsjbc-logo.png"
+                 alt="De La Salle John Bosco College Logo">
+
+        </div>
+
+
+
+        <!-- HEADING -->
+
+        <div class="auth-heading">
+
+
+            <span class="section-label">
+                Private Administration Area
+            </span>
+
+
+            <h1>
+                Registrar Login
+            </h1>
+
+
+            <p>
+                Access the private Registrar administration
+                portal for student records and document requests.
+            </p>
+
+
+        </div>
+
+
+
+        <!-- LOGIN FORM -->
+
+        <form id="registrarLoginForm">
+
+
+            <!-- EMAIL -->
+
+            <div class="form-group">
+
+
+                <label for="registrarEmail">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    Registrar Email
+
+                </label>
+
+
+                <input type="email"
+                       id="registrarEmail"
+                       name="registrarEmail"
+                       placeholder="Enter registrar email"
+                       autocomplete="username"
+                       required>
+
+
+            </div>
+
+
+
+            <!-- PASSWORD -->
+
+            <div class="form-group">
+
+
+                <label for="registrarPassword">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    Password
+
+                </label>
+
+
+                <div class="password-field">
+
+
+                    <input type="password"
+                           id="registrarPassword"
+                           name="registrarPassword"
+                           placeholder="Enter password"
+                           autocomplete="current-password"
+                           required>
+
+
+                    <button type="button"
+                            class="password-toggle"
+                            data-target="registrarPassword"
+                            aria-label="Show or hide password">
+
+
+                        <i class="fa-solid fa-eye"></i>
+
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- LOGIN MESSAGE -->
+
+            <div id="registrarLoginMessage"
+                 class="form-message"
+                 aria-live="polite">
+
+            </div>
+
+
+
+            <!-- LOGIN BUTTON -->
+
+            <button type="submit"
+                    class="btn btn-primary auth-submit">
+
+
+                <i class="fa-solid fa-right-to-bracket"></i>
+
+                Login as Registrar
+
+
+            </button>
+
+
+        </form>
+
+
+
+        <!-- PROTOTYPE NOTICE -->
+
+        <div class="auth-notice">
+
+
+            <i class="fa-solid fa-triangle-exclamation"></i>
+
+
+            <div>
+
+
+                <strong>
+                    Prototype Notice
+                </strong>
+
+
+                <p>
+                    This Registrar login is for demonstration
+                    purposes only. Authentication is handled
+                    through the prototype JavaScript system.
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- DEMO CREDENTIALS -->
+
+        <div class="demo-credentials">
+
+
+            <h3>
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                Demo Registrar Account
+
+            </h3>
+
+
+            <p>
+
+                Email:
+                <strong>
+                    registrar@dlsjbc.edu.ph
+                </strong>
+
+            </p>
+
+
+            <p>
+
+                Password:
+                <strong>
+                    Registrar123
+                </strong>
+
+            </p>
+
+
+        </div>
+
+
+
+        <!-- BACK LINKS -->
+
+        <div class="auth-links">
+
+
+            <a href="../login.html">
+
+                <i class="fa-solid fa-user"></i>
+
+                Student Login
+
+            </a>
+
+
+            <a href="../index.html">
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                Back to Public Website
+
+            </a>
+
+
+        </div>
+
+
+    </section>
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="auth-footer">
+
+
+    <p>
+
+        © 2026 De La Salle John Bosco College.
+        All Rights Reserved.
+
+    </p>
+
+
+    <div>
+
+
+        <a href="../terms.html">
+            Terms of Use
+        </a>
+
+
+        <a href="../policy.html">
+            Policy
+        </a>
+
+
+    </div>
+
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="../js/script.js"></script>
+
+
+</body>
+
+</html>
