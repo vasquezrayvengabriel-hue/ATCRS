@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Registrar Dashboard | ATCRS</title>
+
+
+    <!-- GOOGLE FONT -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+
+    <!-- FONT AWESOME -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+    <!-- MAIN CSS -->
+
+    <link rel="stylesheet"
+          href="../css/style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     REGISTRAR PORTAL HEADER
+===================================================== -->
+
+<header class="portal-header">
+
+
+    <div class="portal-brand">
+
+        <a href="dashboard.html"
+           class="brand">
+
+
+            <div class="brand-logo">
+
+                <img src="../images/dlsjbc-logo.png"
+                     alt="De La Salle John Bosco College Logo">
+
+            </div>
+
+
+            <div class="brand-text">
+
+                <strong>
+                    ATCRS
+                </strong>
+
+                <span>
+                    Registrar Administration Portal
+                </span>
+
+            </div>
+
+
+        </a>
+
+    </div>
+
+
+
+    <div class="portal-user">
+
+
+        <div class="portal-user-info">
+
+            <span>
+                Private Administration Area
+            </span>
+
+            <strong>
+                Registrar
+            </strong>
+
+        </div>
+
+
+        <button type="button"
+                class="logout-btn"
+                id="registrarLogoutBtn">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            Logout
+
+        </button>
+
+
+    </div>
+
+
+</header>
+
+
+
+<!-- =====================================================
+     PORTAL LAYOUT
+===================================================== -->
+
+<div class="portal-layout">
+
+
+
+<!-- =====================================================
+     REGISTRAR SIDEBAR
+===================================================== -->
+
+<aside class="portal-sidebar registrar-sidebar">
+
+
+    <!-- SIDEBAR PROFILE -->
+
+    <div class="sidebar-profile">
+
+
+        <div class="sidebar-avatar registrar-avatar">
+
+            <i class="fa-solid fa-user-tie"></i>
+
+        </div>
+
+
+        <div>
+
+            <strong>
+                Registrar
+            </strong>
+
+            <span>
+                System Administrator
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- SIDEBAR NAVIGATION -->
+
+    <nav class="sidebar-nav">
+
+
+        <a href="dashboard.html"
+           class="active">
+
+            <i class="fa-solid fa-gauge-high"></i>
+
+            <span>
+                Dashboard
+            </span>
+
+        </a>
+
+
+
+        <a href="students.html">
+
+            <i class="fa-solid fa-users"></i>
+
+            <span>
+                Students
+            </span>
+
+        </a>
+
+
+
+        <a href="requests.html">
+
+            <i class="fa-solid fa-file-circle-check"></i>
+
+            <span>
+                Document Requests
+            </span>
+
+        </a>
+
+
+
+        <a href="payments.html">
+
+            <i class="fa-solid fa-wallet"></i>
+
+            <span>
+                Payments
+            </span>
+
+        </a>
+
+
+
+        <a href="clearance.html">
+
+            <i class="fa-solid fa-clipboard-check"></i>
+
+            <span>
+                Clearance
+            </span>
+
+        </a>
+
+
+
+        <a href="documents.html">
+
+            <i class="fa-solid fa-folder-open"></i>
+
+            <span>
+                Released Documents
+            </span>
+
+        </a>
+
+
+
+        <div class="sidebar-divider"></div>
+
+
+
+        <a href="../index.html">
+
+            <i class="fa-solid fa-house"></i>
+
+            <span>
+                Public Website
+            </span>
+
+        </a>
+
+
+    </nav>
+
+
+</aside>
+
+
+
+<!-- =====================================================
+     MAIN CONTENT
+===================================================== -->
+
+<main class="portal-main">
+
+
+
+    <!-- PAGE HEADING -->
+
+    <div class="page-heading">
+
+
+        <div>
+
+            <span class="section-label">
+                Private Registrar Portal
+            </span>
+
+
+            <h1>
+                Registrar Dashboard
+            </h1>
+
+
+            <p>
+                Monitor student accounts, document requests,
+                payments, clearance, and document releases.
+            </p>
+
+        </div>
+
+
+        <div class="dashboard-date">
+
+            <i class="fa-solid fa-calendar-days"></i>
+
+            <span id="registrarCurrentDate">
+                Current Date
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         SUMMARY CARDS
+    ================================================== -->
+
+    <div class="dashboard-grid registrar-summary-grid">
+
+
+        <!-- TOTAL STUDENTS -->
+
+        <div class="dashboard-card summary-card">
+
+
+            <div class="summary-icon">
+
+                <i class="fa-solid fa-users"></i>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Total Students
+                </span>
+
+
+                <strong id="registrarTotalStudents">
+                    0
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- TOTAL REQUESTS -->
+
+        <div class="dashboard-card summary-card">
+
+
+            <div class="summary-icon">
+
+                <i class="fa-solid fa-file-lines"></i>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Total Requests
+                </span>
+
+
+                <strong id="registrarTotalRequests">
+                    0
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- PENDING REQUESTS -->
+
+        <div class="dashboard-card summary-card">
+
+
+            <div class="summary-icon">
+
+                <i class="fa-solid fa-clock"></i>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Pending Requests
+                </span>
+
+
+                <strong id="registrarPendingRequests">
+                    0
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- PROCESSING REQUESTS -->
+
+        <div class="dashboard-card summary-card">
+
+
+            <div class="summary-icon">
+
+                <i class="fa-solid fa-gears"></i>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Processing
+                </span>
+
+
+                <strong id="registrarProcessingRequests">
+                    0
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- RELEASED DOCUMENTS -->
+
+        <div class="dashboard-card summary-card">
+
+
+            <div class="summary-icon">
+
+                <i class="fa-solid fa-file-circle-check"></i>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Released Documents
+                </span>
+
+
+                <strong id="registrarReleasedDocuments">
+                    0
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- PENDING PAYMENTS -->
+
+        <div class="dashboard-card summary-card">
+
+
+            <div class="summary-icon">
+
+                <i class="fa-solid fa-money-bill-wave"></i>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Pending Payments
+                </span>
+
+
+                <strong id="registrarPendingPayments">
+                    0
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+  </div>
+  <!-- =====================================================
+     QUICK ACTIONS
+===================================================== -->
+
+<section class="dashboard-card">
+
+
+    <div class="card-header">
+
+
+        <div>
+
+            <h2>
+
+                <i class="fa-solid fa-bolt"></i>
+
+                Quick Actions
+
+            </h2>
+
+
+            <p>
+                Frequently used Registrar administration tools.
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="quick-actions-grid">
+
+
+        <a href="students.html"
+           class="quick-action-card">
+
+
+            <div class="quick-action-icon">
+
+                <i class="fa-solid fa-users"></i>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    Manage Students
+                </strong>
+
+
+                <span>
+                    View student accounts and information.
+                </span>
+
+            </div>
+
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+
+
+        <a href="requests.html"
+           class="quick-action-card">
+
+
+            <div class="quick-action-icon">
+
+                <i class="fa-solid fa-file-circle-check"></i>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    Review Requests
+                </strong>
+
+
+                <span>
+                    Process submitted document requests.
+                </span>
+
+            </div>
+
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+
+
+        <a href="payments.html"
+           class="quick-action-card">
+
+
+            <div class="quick-action-icon">
+
+                <i class="fa-solid fa-wallet"></i>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    Check Payments
+                </strong>
+
+
+                <span>
+                    Review payment records and statuses.
+                </span>
+
+            </div>
+
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+
+
+        <a href="clearance.html"
+           class="quick-action-card">
+
+
+            <div class="quick-action-icon">
+
+                <i class="fa-solid fa-clipboard-check"></i>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    Manage Clearance
+                </strong>
+
+
+                <span>
+                    Check financial and library clearance.
+                </span>
+
+            </div>
+
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     RECENT DOCUMENT REQUESTS
+===================================================== -->
+
+<section class="dashboard-card">
+
+
+    <div class="card-header">
+
+
+        <div>
+
+            <h2>
+
+                <i class="fa-solid fa-file-lines"></i>
+
+                Recent Document Requests
+
+            </h2>
+
+
+            <p>
+                Latest requests submitted by students.
+            </p>
+
+        </div>
+
+
+        <a href="requests.html"
+           class="btn btn-secondary">
+
+            View All Requests
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+
+    </div>
+
+
+
+    <div class="table-wrapper">
+
+
+        <table class="data-table">
+
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        Request ID
+                    </th>
+
+                    <th>
+                        Student
+                    </th>
+
+                    <th>
+                        Document
+                    </th>
+
+                    <th>
+                        Date
+                    </th>
+
+                    <th>
+                        Status
+                    </th>
+
+                    <th>
+                        Action
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="registrarRecentRequests">
+
+
+                <tr>
+
+                    <td colspan="6"
+                        class="table-empty">
+
+
+                        <i class="fa-solid fa-folder-open"></i>
+
+
+                        <span>
+                            No recent requests found.
+                        </span>
+
+
+                    </td>
+
+                </tr>
+
+
+            </tbody>
+
+
+        </table>
+
+
+    </div>
+
+
+</section>
+  
+<!-- =====================================================
+     REQUEST STATUS OVERVIEW
+===================================================== -->
+
+<section class="dashboard-card">
+
+
+    <div class="card-header">
+
+
+        <div>
+
+            <h2>
+
+                <i class="fa-solid fa-chart-simple"></i>
+
+                Request Status Overview
+
+            </h2>
+
+
+            <p>
+                Summary of the current document processing workflow.
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="status-overview-grid">
+
+
+        <!-- PENDING -->
+
+        <div class="status-overview-item">
+
+
+            <div class="status-overview-icon pending-icon">
+
+                <i class="fa-solid fa-hourglass-start"></i>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Pending Review
+                </span>
+
+
+                <strong id="overviewPending">
+                    0
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- PAYMENT -->
+
+        <div class="status-overview-item">
+
+
+            <div class="status-overview-icon payment-icon">
+
+                <i class="fa-solid fa-wallet"></i>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Payment Pending
+                </span>
+
+
+                <strong id="overviewPaymentPending">
+                    0
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- CLEARANCE -->
+
+        <div class="status-overview-item">
+
+
+            <div class="status-overview-icon clearance-icon">
+
+                <i class="fa-solid fa-clipboard-check"></i>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Clearance Checking
+                </span>
+
+
+                <strong id="overviewClearance">
+                    0
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- PROCESSING -->
+
+        <div class="status-overview-item">
+
+
+            <div class="status-overview-icon processing-icon">
+
+                <i class="fa-solid fa-gears"></i>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Document Processing
+                </span>
+
+
+                <strong id="overviewProcessing">
+                    0
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- APPROVED -->
+
+        <div class="status-overview-item">
+
+
+            <div class="status-overview-icon approved-icon">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Approved
+                </span>
+
+
+                <strong id="overviewApproved">
+                    0
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- RELEASED -->
+
+        <div class="status-overview-item">
+
+
+            <div class="status-overview-icon released-icon">
+
+                <i class="fa-solid fa-file-circle-check"></i>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Released
+                </span>
+
+
+                <strong id="overviewReleased">
+                    0
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+<!-- =====================================================
+     REGISTRAR ADMINISTRATION INFORMATION
+===================================================== -->
+
+<section class="dashboard-card security-notice">
+
+
+    <div class="notice-icon">
+
+        <i class="fa-solid fa-clipboard-check"></i>
+
+    </div>
+
+
+    <div class="notice-content">
+
+
+        <h3>
+            Registrar Administration Information
+        </h3>
+
+
+        <p>
+            The Registrar is responsible for reviewing student
+            document requests, verifying submitted information,
+            checking clearance requirements, and approving the
+            release of official school documents.
+        </p>
+
+
+        <p>
+            All requests should be reviewed carefully to ensure
+            that student records are accurate and that the
+            required processing steps have been completed before
+            a document is released.
+        </p>
+
+
+        <p>
+            Use the administration tools to monitor student
+            accounts, payment records, clearance status, document
+            processing, and approved document releases.
+        </p>
+
+
+    </div>
+
+
+</section>
+  <!-- =====================================================
+     CLOSE MAIN CONTENT
+===================================================== -->
+
+</main>
+
+</div>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="portal-footer">
+
+
+    <div class="footer-brand">
+
+
+        <img src="../images/dlsjbc-logo.png"
+             alt="De La Salle John Bosco College Logo">
+
+
+        <div>
+
+            <strong>
+                ATCRS
+            </strong>
+
+
+            <span>
+                Registrar Administration Portal
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="footer-links">
+
+
+        <a href="../terms.html">
+            Terms of Use
+        </a>
+
+
+        <a href="../policy.html">
+            Policy
+        </a>
+
+
+        <a href="../index.html">
+            Public Website
+        </a>
+
+
+    </div>
+
+
+
+    <p>
+
+        © 2026 De La Salle John Bosco College.
+        All Rights Reserved.
+
+    </p>
+
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="../js/script.js"></script>
+
+
+</body>
+
+</html>
+
