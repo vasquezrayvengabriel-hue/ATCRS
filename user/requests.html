@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Request Document | ATCRS</title>
+
+    <link rel="stylesheet"
+          href="../css/style.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+
+<body class="dashboard-page">
+
+
+<!-- =====================================================
+     STUDENT PORTAL HEADER
+===================================================== -->
+
+<header class="portal-header">
+
+    <div class="portal-brand">
+
+        <a href="dashboard.html"
+           class="brand">
+
+            <div class="brand-logo">
+
+                <img src="../images/dlsjbc-logo.png"
+                     alt="De La Salle John Bosco College Logo">
+
+            </div>
+
+            <div class="brand-text">
+
+                <strong>ATCRS</strong>
+
+                <span>
+                    De La Salle John Bosco College
+                </span>
+
+            </div>
+
+        </a>
+
+    </div>
+
+
+    <div class="portal-user">
+
+        <div class="portal-user-info">
+
+            <span>
+                Student Portal
+            </span>
+
+            <strong id="requestHeaderName">
+                Student
+            </strong>
+
+        </div>
+
+
+        <button type="button"
+                class="logout-btn"
+                id="studentLogoutBtn">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            Logout
+
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     PORTAL LAYOUT
+===================================================== -->
+
+<div class="portal-layout">
+
+
+    <!-- =================================================
+         SIDEBAR
+    ================================================== -->
+
+    <aside class="portal-sidebar">
+
+
+        <div class="sidebar-profile">
+
+            <div class="sidebar-avatar">
+
+                <i class="fa-solid fa-user"></i>
+
+            </div>
+
+            <h3 id="sidebarStudentName">
+                Student
+            </h3>
+
+            <p>
+                Student Account
+            </p>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+
+            <a href="dashboard.html">
+
+                <i class="fa-solid fa-gauge-high"></i>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a href="profile.html">
+
+                <i class="fa-solid fa-user"></i>
+
+                <span>
+                    My Profile
+                </span>
+
+            </a>
+
+
+            <a href="request.html"
+               class="active">
+
+                <i class="fa-solid fa-file-circle-plus"></i>
+
+                <span>
+                    Request Document
+                </span>
+
+            </a>
+
+
+            <a href="payment.html">
+
+                <i class="fa-solid fa-credit-card"></i>
+
+                <span>
+                    Payment
+                </span>
+
+            </a>
+
+
+            <a href="documents.html">
+
+                <i class="fa-solid fa-folder-open"></i>
+
+                <span>
+                    My Documents
+                </span>
+
+            </a>
+
+
+            <div class="sidebar-divider"></div>
+
+
+            <a href="../index.html">
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>
+                    Public Website
+                </span>
+
+            </a>
+
+
+        </nav>
+
+    </aside>
+
+
+
+    <!-- =================================================
+         MAIN CONTENT START
+    ================================================== -->
+
+    <main class="portal-main">
+
+
+        <!-- PAGE HEADING -->
+
+        <div class="page-heading">
+
+            <div>
+
+                <span class="section-label">
+                    DOCUMENT SERVICES
+                </span>
+
+                <h1>
+                    Request a Document
+                </h1>
+
+                <p>
+                    Submit an online request for your school records
+                    and credentials.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             REQUEST PROCESS INDICATOR
+        ================================================== -->
+
+        <section class="request-progress-card">
+
+            <div class="request-progress">
+
+                <div class="progress-step active">
+
+                    <div class="progress-number">
+                        1
+                    </div>
+
+                    <span>
+                        Select Document
+                    </span>
+
+                </div>
+
+
+                <div class="progress-line"></div>
+
+
+                <div class="progress-step">
+
+                    <div class="progress-number">
+                        2
+                    </div>
+
+                    <span>
+                        Request Details
+                    </span>
+
+                </div>
+
+
+                <div class="progress-line"></div>
+
+
+                <div class="progress-step">
+
+                    <div class="progress-number">
+                        3
+                    </div>
+
+                    <span>
+                        Submit
+                    </span>
+
+                </div>
+
+
+                <div class="progress-line"></div>
+
+
+                <div class="progress-step">
+
+                    <div class="progress-number">
+                        4
+                    </div>
+
+                    <span>
+                        Payment
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+      <!-- =====================================================
+     DOCUMENT REQUEST FORM
+===================================================== -->
+
+<section class="dashboard-card">
+
+
+    <div class="card-header">
+
+        <div>
+
+            <h2>
+
+                <i class="fa-solid fa-file-circle-plus"></i>
+
+                Select Document
+
+            </h2>
+
+            <p>
+                Choose the school document you want to request.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <form id="documentRequestForm">
+
+
+        <!-- DOCUMENT TYPE -->
+
+        <div class="form-group">
+
+            <label for="documentType">
+
+                <i class="fa-solid fa-file-lines"></i>
+
+                Document Type
+
+            </label>
+
+
+            <select id="documentType"
+                    name="documentType"
+                    required>
+
+                <option value="">
+                    Select a document
+                </option>
+
+                <option value="School Background / School Records">
+                    School Background / School Records
+                </option>
+
+                <option value="Transcript of Records">
+                    Transcript of Records (TOR)
+                </option>
+
+                <option value="Diploma">
+                    Diploma
+                </option>
+
+                <option value="Certificate of Good Moral Character">
+                    Certificate of Good Moral Character
+                </option>
+
+                <option value="Certificate of Enrollment">
+                    Certificate of Enrollment
+                </option>
+
+                <option value="Certificate of Graduation">
+                    Certificate of Graduation
+                </option>
+
+                <option value="Other School Document">
+                    Other School Document
+                </option>
+
+                <option value="Credential Verification">
+                    Credential Verification
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <!-- PURPOSE -->
+
+        <div class="form-group">
+
+            <label for="requestPurpose">
+
+                <i class="fa-solid fa-bullseye"></i>
+
+                Purpose of Request
+
+            </label>
+
+
+            <select id="requestPurpose"
+                    name="requestPurpose"
+                    required>
+
+                <option value="">
+                    Select purpose
+                </option>
+
+                <option value="Employment">
+                    Employment
+                </option>
+
+                <option value="Further Studies">
+                    Further Studies
+                </option>
+
+                <option value="Scholarship">
+                    Scholarship
+                </option>
+
+                <option value="Government Requirement">
+                    Government Requirement
+                </option>
+
+                <option value="Personal Record">
+                    Personal Record
+                </option>
+
+                <option value="Credential Verification">
+                    Credential Verification
+                </option>
+
+                <option value="Other">
+                    Other
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <!-- OTHER PURPOSE -->
+
+        <div class="form-group"
+             id="otherPurposeGroup"
+             style="display:none;">
+
+            <label for="otherPurpose">
+
+                <i class="fa-solid fa-pen"></i>
+
+                Specify Purpose
+
+            </label>
+
+
+            <input type="text"
+                   id="otherPurpose"
+                   name="otherPurpose"
+                   maxlength="150"
+                   placeholder="Enter your purpose">
+
+        </div>
+
+
+
+        <!-- NUMBER OF COPIES -->
+
+        <div class="form-group">
+
+            <label for="numberOfCopies">
+
+                <i class="fa-solid fa-copy"></i>
+
+                Number of Copies
+
+            </label>
+
+
+            <select id="numberOfCopies"
+                    name="numberOfCopies"
+                    required>
+
+                <option value="">
+                    Select number of copies
+                </option>
+
+                <option value="1">
+                    1 Copy
+                </option>
+
+                <option value="2">
+                    2 Copies
+                </option>
+
+                <option value="3">
+                    3 Copies
+                </option>
+
+                <option value="4">
+                    4 Copies
+                </option>
+
+                <option value="5">
+                    5 Copies
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <!-- REQUEST DETAILS -->
+
+        <div class="form-group">
+
+            <label for="requestDetails">
+
+                <i class="fa-solid fa-message"></i>
+
+                Additional Details
+
+            </label>
+
+
+            <textarea id="requestDetails"
+                      name="requestDetails"
+                      rows="5"
+                      maxlength="500"
+                      placeholder="Enter any additional information related to your request..."></textarea>
+
+
+            <small>
+                Maximum of 500 characters.
+            </small>
+
+        </div>
+              <!-- =================================================
+             DOCUMENT RELEASE METHOD
+        ================================================== -->
+
+        <div class="form-group">
+
+            <label for="releaseMethod">
+
+                <i class="fa-solid fa-paper-plane"></i>
+
+                Preferred Release Method
+
+            </label>
+
+
+            <select id="releaseMethod"
+                    name="releaseMethod"
+                    required>
+
+                <option value="">
+                    Select release method
+                </option>
+
+                <option value="Digital Release">
+                    Digital Release
+                </option>
+
+                <option value="Email">
+                    Email
+                </option>
+
+                <option value="Server-to-Server Verification">
+                    Server-to-Server Verification
+                </option>
+
+                <option value="Registrar Instructions">
+                    Registrar Instructions
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <!-- EMAIL -->
+
+        <div class="form-group">
+
+            <label for="releaseEmail">
+
+                <i class="fa-solid fa-envelope"></i>
+
+                Release Email Address
+
+            </label>
+
+
+            <input type="email"
+                   id="releaseEmail"
+                   name="releaseEmail"
+                   placeholder="Enter email for digital release"
+                   required>
+
+
+            <small>
+                Make sure this email address is active.
+            </small>
+
+        </div>
+
+
+
+        <!-- REVIEW BOX -->
+
+        <div class="request-review-box">
+
+
+            <div class="review-header">
+
+                <h3>
+
+                    <i class="fa-solid fa-clipboard-check"></i>
+
+                    Request Review
+
+                </h3>
+
+                <p>
+                    Please review your information before submitting.
+                </p>
+
+            </div>
+
+
+
+            <div class="review-grid">
+
+
+                <div class="review-item">
+
+                    <span>
+                        Document
+                    </span>
+
+                    <strong id="reviewDocument">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="review-item">
+
+                    <span>
+                        Purpose
+                    </span>
+
+                    <strong id="reviewPurpose">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="review-item">
+
+                    <span>
+                        Copies
+                    </span>
+
+                    <strong id="reviewCopies">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="review-item">
+
+                    <span>
+                        Release Method
+                    </span>
+
+                    <strong id="reviewRelease">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- AGREEMENT -->
+
+        <div class="request-agreement">
+
+            <label>
+
+                <input type="checkbox"
+                       id="requestAgreement"
+                       name="requestAgreement"
+                       required>
+
+                <span>
+                    I confirm that the information provided is correct
+                    and I understand that the Registrar will review
+                    and process this request.
+                </span>
+
+            </label>
+
+        </div>
+
+
+
+        <!-- MESSAGE -->
+
+        <div id="requestMessage"
+             class="form-message"
+             aria-live="polite">
+        </div>
+
+
+
+        <!-- BUTTONS -->
+
+        <div class="form-actions">
+
+
+            <a href="dashboard.html"
+               class="btn btn-secondary">
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                Cancel
+
+            </a>
+
+
+            <button type="submit"
+                    class="btn btn-primary">
+
+                <i class="fa-solid fa-paper-plane"></i>
+
+                Submit Request
+
+            </button>
+
+
+        </div>
+
+
+    </form>
+
+</section>
+      <!-- =====================================================
+     REQUEST INFORMATION
+===================================================== -->
+
+<section class="dashboard-card information-card">
+
+
+    <div class="card-header">
+
+        <div>
+
+            <h2>
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                Before You Submit
+
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <ul class="information-list">
+
+
+        <li>
+
+            <i class="fa-solid fa-check"></i>
+
+            Make sure the selected document is the document you need.
+
+        </li>
+
+
+        <li>
+
+            <i class="fa-solid fa-check"></i>
+
+            Check that your Student ID and personal information are correct.
+
+        </li>
+
+
+        <li>
+
+            <i class="fa-solid fa-check"></i>
+
+            Requests may require clearance verification before processing.
+
+        </li>
+
+
+        <li>
+
+            <i class="fa-solid fa-check"></i>
+
+            Payment requirements will be displayed after your request
+            is submitted.
+
+        </li>
+
+
+        <li>
+
+            <i class="fa-solid fa-check"></i>
+
+            The Registrar will review your request before document processing.
+
+        </li>
+
+
+        <li>
+
+            <i class="fa-solid fa-check"></i>
+
+            Digital documents will become available through
+            My Documents after approval and release.
+
+        </li>
+
+
+    </ul>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     CLOSE MAIN CONTENT
+===================================================== -->
+
+</main>
+
+</div>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="portal-footer">
+
+
+    <div class="footer-brand">
+
+        <img src="../images/dlsjbc-logo.png"
+             alt="De La Salle John Bosco College Logo">
+
+
+        <div>
+
+            <strong>
+                ATCRS
+            </strong>
+
+            <span>
+                De La Salle John Bosco College
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="footer-links">
+
+        <a href="../terms.html">
+            Terms of Use
+        </a>
+
+        <a href="../policy.html">
+            Policy
+        </a>
+
+        <a href="../index.html">
+            Public Website
+        </a>
+
+    </div>
+
+
+
+    <p>
+
+        © 2026 De La Salle John Bosco College.
+        All Rights Reserved.
+
+    </p>
+
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="../js/script.js"></script>
+
+
+</body>
+
+</html>
