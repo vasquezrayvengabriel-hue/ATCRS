@@ -777,17 +777,17 @@ function initializeStudentRegistration(){
 
 
             /* -------------------------------------------------
-               FULL NAME 30–50 CHARACTERS
+               FULL NAME 10–20 CHARACTERS
                ------------------------------------------------- */
 
             if(
-                fullName.length < 30 ||
-                fullName.length > 50
+                fullName.length < 10 ||
+                fullName.length > 20
             ){
 
                 showMessage(
                     message,
-                    "Full Name must contain 30 to 50 characters.",
+                    "Full Name must contain 10 to 20 characters.",
                     "error"
                 );
 
