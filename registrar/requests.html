@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Document Requests | Registrar Portal | ATCRS</title>
+
+
+    <!-- GOOGLE FONT -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+
+    <!-- FONT AWESOME -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+    <!-- MAIN CSS -->
+
+    <link rel="stylesheet"
+          href="../css/style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     REGISTRAR PORTAL HEADER
+===================================================== -->
+
+<header class="portal-header">
+
+
+    <div class="portal-brand">
+
+        <a href="dashboard.html"
+           class="brand">
+
+
+            <div class="brand-logo">
+
+                <img src="../images/dlsjbc-logo.png"
+                     alt="De La Salle John Bosco College Logo">
+
+            </div>
+
+
+            <div class="brand-text">
+
+                <strong>
+                    ATCRS
+                </strong>
+
+                <span>
+                    Registrar Administration Portal
+                </span>
+
+            </div>
+
+
+        </a>
+
+    </div>
+
+
+
+    <div class="portal-user">
+
+
+        <div class="portal-user-info">
+
+            <span>
+                Private Administration Area
+            </span>
+
+            <strong>
+                Registrar
+            </strong>
+
+        </div>
+
+
+        <button type="button"
+                class="logout-btn"
+                id="registrarLogoutBtn">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            Logout
+
+        </button>
+
+
+    </div>
+
+
+</header>
+
+
+
+<!-- =====================================================
+     PORTAL LAYOUT
+===================================================== -->
+
+<div class="portal-layout">
+
+
+
+<!-- =====================================================
+     REGISTRAR SIDEBAR
+===================================================== -->
+
+<aside class="portal-sidebar registrar-sidebar">
+
+
+    <div class="sidebar-profile">
+
+
+        <div class="sidebar-avatar registrar-avatar">
+
+            <i class="fa-solid fa-user-tie"></i>
+
+        </div>
+
+
+        <div>
+
+            <strong>
+                Registrar
+            </strong>
+
+            <span>
+                System Administrator
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+
+    <nav class="sidebar-nav">
+
+
+        <a href="dashboard.html">
+
+            <i class="fa-solid fa-gauge-high"></i>
+
+            <span>
+                Dashboard
+            </span>
+
+        </a>
+
+
+
+        <a href="students.html">
+
+            <i class="fa-solid fa-users"></i>
+
+            <span>
+                Students
+            </span>
+
+        </a>
+
+
+
+        <a href="requests.html"
+           class="active">
+
+            <i class="fa-solid fa-file-circle-check"></i>
+
+            <span>
+                Document Requests
+            </span>
+
+        </a>
+
+
+
+        <a href="payments.html">
+
+            <i class="fa-solid fa-wallet"></i>
+
+            <span>
+                Payments
+            </span>
+
+        </a>
+
+
+
+        <a href="clearance.html">
+
+            <i class="fa-solid fa-clipboard-check"></i>
+
+            <span>
+                Clearance
+            </span>
+
+        </a>
+
+
+
+        <a href="documents.html">
+
+            <i class="fa-solid fa-folder-open"></i>
+
+            <span>
+                Released Documents
+            </span>
+
+        </a>
+
+
+
+        <div class="sidebar-divider"></div>
+
+
+
+        <a href="../index.html">
+
+            <i class="fa-solid fa-house"></i>
+
+            <span>
+                Public Website
+            </span>
+
+        </a>
+
+
+    </nav>
+
+
+</aside>
+
+
+
+<!-- =====================================================
+     MAIN CONTENT
+===================================================== -->
+
+<main class="portal-main">
+
+
+
+    <!-- PAGE HEADING -->
+
+    <div class="page-heading">
+
+
+        <div>
+
+            <span class="section-label">
+                Registrar Administration
+            </span>
+
+
+            <h1>
+                Document Requests
+            </h1>
+
+
+            <p>
+                Review, process, and manage document requests
+                submitted by students.
+            </p>
+
+        </div>
+
+
+        <div class="dashboard-date">
+
+            <i class="fa-solid fa-file-circle-check"></i>
+
+            <span>
+                Request Management
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         REQUEST SUMMARY
+    ================================================== -->
+
+    <div class="dashboard-grid">
+
+
+        <div class="dashboard-card summary-card">
+
+
+            <div class="summary-icon">
+
+                <i class="fa-solid fa-file-lines"></i>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    All Requests
+                </span>
+
+
+                <strong id="requestsTotalCount">
+                    0
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="dashboard-card summary-card">
+
+
+            <div class="summary-icon">
+
+                <i class="fa-solid fa-clock"></i>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Pending Review
+                </span>
+
+
+                <strong id="requestsPendingCount">
+                    0
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="dashboard-card summary-card">
+
+
+            <div class="summary-icon">
+
+                <i class="fa-solid fa-gears"></i>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Processing
+                </span>
+
+
+                <strong id="requestsProcessingCount">
+                    0
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="dashboard-card summary-card">
+
+
+            <div class="summary-icon">
+
+                <i class="fa-solid fa-file-circle-check"></i>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Released
+                </span>
+
+
+                <strong id="requestsReleasedCount">
+                    0
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+  <!-- =====================================================
+     REQUEST SEARCH AND FILTER
+===================================================== -->
+
+<section class="dashboard-card">
+
+
+    <div class="card-header">
+
+
+        <div>
+
+            <h2>
+
+                <i class="fa-solid fa-filter"></i>
+
+                Search and Filter Requests
+
+            </h2>
+
+
+            <p>
+                Find a request by student, request ID, document,
+                or processing status.
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="search-form">
+
+
+        <!-- SEARCH -->
+
+        <div class="form-group search-input-group">
+
+
+            <label for="requestSearchInput">
+
+                <i class="fa-solid fa-search"></i>
+
+                Search Requests
+
+            </label>
+
+
+            <div class="search-field">
+
+
+                <input type="search"
+                       id="requestSearchInput"
+                       placeholder="Search by Request ID, Student ID, or name">
+
+
+                <button type="button"
+                        class="search-clear-btn"
+                        id="clearRequestSearch"
+                        aria-label="Clear request search">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- STATUS FILTER -->
+
+        <div class="form-group">
+
+
+            <label for="requestStatusFilter">
+
+                <i class="fa-solid fa-list-check"></i>
+
+                Request Status
+
+            </label>
+
+
+            <select id="requestStatusFilter">
+
+
+                <option value="">
+                    All Statuses
+                </option>
+
+
+                <option value="Pending">
+                    Pending
+                </option>
+
+
+                <option value="Payment Pending">
+                    Payment Pending
+                </option>
+
+
+                <option value="For Clearance">
+                    For Clearance
+                </option>
+
+
+                <option value="Processing">
+                    Processing
+                </option>
+
+
+                <option value="Approved">
+                    Approved
+                </option>
+
+
+                <option value="Released">
+                    Released
+                </option>
+
+
+                <option value="Rejected">
+                    Rejected
+                </option>
+
+
+            </select>
+
+
+        </div>
+
+
+
+        <!-- DOCUMENT FILTER -->
+
+        <div class="form-group">
+
+
+            <label for="requestDocumentFilter">
+
+                <i class="fa-solid fa-file-lines"></i>
+
+                Document Type
+
+            </label>
+
+
+            <select id="requestDocumentFilter">
+
+
+                <option value="">
+                    All Documents
+                </option>
+
+
+                <option value="School Background / School Records">
+                    School Background / School Records
+                </option>
+
+
+                <option value="Transcript of Records">
+                    Transcript of Records
+                </option>
+
+
+                <option value="Diploma">
+                    Diploma
+                </option>
+
+
+                <option value="Certificate of Good Moral Character">
+                    Certificate of Good Moral Character
+                </option>
+
+
+                <option value="Certificate of Enrollment">
+                    Certificate of Enrollment
+                </option>
+
+
+                <option value="Certificate of Graduation">
+                    Certificate of Graduation
+                </option>
+
+
+                <option value="Other School Document">
+                    Other School Document
+                </option>
+
+
+                <option value="Credential Verification">
+                    Credential Verification
+                </option>
+
+
+            </select>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     REQUEST TABLE
+===================================================== -->
+
+<section class="dashboard-card">
+
+
+    <div class="card-header">
+
+
+        <div>
+
+            <h2>
+
+                <i class="fa-solid fa-table-list"></i>
+
+                Submitted Requests
+
+            </h2>
+
+
+            <p>
+                Review the latest document requests submitted
+                by students.
+            </p>
+
+        </div>
+
+
+        <span class="record-count"
+              id="requestRecordCount">
+
+            0 Records
+
+        </span>
+
+
+    </div>
+
+
+
+    <div class="table-wrapper">
+
+
+        <table class="data-table">
+
+
+            <thead>
+
+
+                <tr>
+
+
+                    <th>
+                        Request ID
+                    </th>
+
+
+                    <th>
+                        Student
+                    </th>
+
+
+                    <th>
+                        Student ID
+                    </th>
+
+
+                    <th>
+                        Document
+                    </th>
+
+
+                    <th>
+                        Request Date
+                    </th>
+
+
+                    <th>
+                        Payment
+                    </th>
+
+
+                    <th>
+                        Status
+                    </th>
+
+
+                    <th>
+                        Action
+                    </th>
+
+
+                </tr>
+
+
+            </thead>
+
+
+            <tbody id="registrarRequestsTable">
+
+
+                <tr>
+
+
+                    <td colspan="8"
+                        class="table-empty">
+
+
+                        <i class="fa-solid fa-file-circle-check"></i>
+
+
+                        <span>
+                            No document requests found.
+                        </span>
+
+
+                    </td>
+
+
+                </tr>
+
+
+            </tbody>
+
+
+        </table>
+
+
+    </div>
+
+
+</section>
+  <!-- =====================================================
+     REQUEST DETAILS
+===================================================== -->
+
+<section class="dashboard-card"
+         id="registrarRequestDetails"
+         style="display:none;">
+
+
+    <div class="card-header">
+
+
+        <div>
+
+            <h2>
+
+                <i class="fa-solid fa-file-lines"></i>
+
+                Request Details
+
+            </h2>
+
+
+            <p>
+                Review the selected student's document request.
+            </p>
+
+        </div>
+
+
+        <button type="button"
+                class="btn btn-secondary"
+                id="closeRegistrarRequestDetails">
+
+            <i class="fa-solid fa-xmark"></i>
+
+            Close
+
+        </button>
+
+
+    </div>
+
+
+
+    <!-- REQUEST INFORMATION -->
+
+    <div class="information-grid">
+
+
+        <div class="information-item">
+
+
+            <span>
+                Request ID
+            </span>
+
+
+            <strong id="registrarDetailsRequestId">
+                —
+            </strong>
+
+
+        </div>
+
+
+
+        <div class="information-item">
+
+
+            <span>
+                Student Name
+            </span>
+
+
+            <strong id="registrarDetailsStudentName">
+                —
+            </strong>
+
+
+        </div>
+
+
+
+        <div class="information-item">
+
+
+            <span>
+                Student ID
+            </span>
+
+
+            <strong id="registrarDetailsStudentId">
+                —
+            </strong>
+
+
+        </div>
+
+
+
+        <div class="information-item">
+
+
+            <span>
+                Email Address
+            </span>
+
+
+            <strong id="registrarDetailsEmail">
+                —
+            </strong>
+
+
+        </div>
+
+
+
+        <div class="information-item">
+
+
+            <span>
+                Document
+            </span>
+
+
+            <strong id="registrarDetailsDocument">
+                —
+            </strong>
+
+
+        </div>
+
+
+
+        <div class="information-item">
+
+
+            <span>
+                Purpose
+            </span>
+
+
+            <strong id="registrarDetailsPurpose">
+                —
+            </strong>
+
+
+        </div>
+
+
+
+        <div class="information-item">
+
+
+            <span>
+                Number of Copies
+            </span>
+
+
+            <strong id="registrarDetailsCopies">
+                —
+            </strong>
+
+
+        </div>
+
+
+
+        <div class="information-item">
+
+
+            <span>
+                Release Method
+            </span>
+
+
+            <strong id="registrarDetailsReleaseMethod">
+                —
+            </strong>
+
+
+        </div>
+
+
+
+        <div class="information-item">
+
+
+            <span>
+                Request Date
+            </span>
+
+
+            <strong id="registrarDetailsDate">
+                —
+            </strong>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- PAYMENT STATUS -->
+
+    <div class="clearance-grid">
+
+
+        <div class="clearance-item">
+
+
+            <div class="clearance-icon">
+
+                <i class="fa-solid fa-wallet"></i>
+
+            </div>
+
+
+            <div>
+
+
+                <span>
+                    Payment Status
+                </span>
+
+
+                <strong id="registrarDetailsPayment">
+                    Pending
+                </strong>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="clearance-item">
+
+
+            <div class="clearance-icon">
+
+                <i class="fa-solid fa-clipboard-check"></i>
+
+            </div>
+
+
+            <div>
+
+
+                <span>
+                    Clearance Status
+                </span>
+
+
+                <strong id="registrarDetailsClearance">
+                    Pending
+                </strong>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="clearance-item">
+
+
+            <div class="clearance-icon">
+
+                <i class="fa-solid fa-gears"></i>
+
+            </div>
+
+
+            <div>
+
+
+                <span>
+                    Processing Status
+                </span>
+
+
+                <strong id="registrarDetailsStatus">
+                    Pending
+                </strong>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- REQUEST DETAILS / NOTES -->
+
+    <div class="form-group">
+
+
+        <label for="registrarRequestNotes">
+
+            <i class="fa-solid fa-note-sticky"></i>
+
+            Registrar Notes
+
+        </label>
+
+
+        <textarea id="registrarRequestNotes"
+                  rows="5"
+                  placeholder="Enter notes regarding this document request..."></textarea>
+
+
+    </div>
+
+
+
+    <!-- REQUEST STATUS -->
+
+    <div class="form-group">
+
+
+        <label for="registrarRequestStatus">
+
+            <i class="fa-solid fa-list-check"></i>
+
+            Update Request Status
+
+        </label>
+
+
+        <select id="registrarRequestStatus">
+
+
+            <option value="Pending">
+                Pending
+            </option>
+
+
+            <option value="Payment Pending">
+                Payment Pending
+            </option>
+
+
+            <option value="For Clearance">
+                For Clearance
+            </option>
+
+
+            <option value="Processing">
+                Processing
+            </option>
+
+
+            <option value="Approved">
+                Approved
+            </option>
+
+
+            <option value="Released">
+                Released
+            </option>
+
+
+            <option value="Rejected">
+                Rejected
+            </option>
+
+
+        </select>
+
+
+    </div>
+
+
+
+    <!-- MESSAGE -->
+
+    <div id="registrarRequestMessage"
+         class="form-message"
+         aria-live="polite">
+    </div>
+
+
+
+    <!-- ACTIONS -->
+
+    <div class="form-actions">
+
+
+        <button type="button"
+                class="btn btn-secondary"
+                id="saveRegistrarRequestNotes">
+
+            <i class="fa-solid fa-floppy-disk"></i>
+
+            Save Notes
+
+        </button>
+
+
+        <button type="button"
+                class="btn btn-primary"
+                id="updateRegistrarRequestStatus">
+
+            <i class="fa-solid fa-check"></i>
+
+            Update Request
+
+        </button>
+
+
+    </div>
+
+
+</section>
+  <!-- =====================================================
+     REQUEST PROCESSING GUIDELINES
+===================================================== -->
+
+<section class="dashboard-card information-card">
+
+
+    <div class="card-header">
+
+
+        <div>
+
+            <h2>
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                Request Processing Guidelines
+
+            </h2>
+
+        </div>
+
+
+    </div>
+
+
+
+    <ul class="information-list">
+
+
+        <li>
+
+            <i class="fa-solid fa-check"></i>
+
+            Review the student's information and requested
+            document before processing the request.
+
+        </li>
+
+
+        <li>
+
+            <i class="fa-solid fa-check"></i>
+
+            Confirm the payment status when a processing fee
+            is required.
+
+        </li>
+
+
+        <li>
+
+            <i class="fa-solid fa-check"></i>
+
+            Check the required clearance information before
+            approving the document request.
+
+        </li>
+
+
+        <li>
+
+            <i class="fa-solid fa-check"></i>
+
+            Update the request status as the document moves
+            through the processing stages.
+
+        </li>
+
+
+        <li>
+
+            <i class="fa-solid fa-check"></i>
+
+            Confirm the document is ready before marking the
+            request as released.
+
+        </li>
+
+
+        <li>
+
+            <i class="fa-solid fa-check"></i>
+
+            Keep clear notes for requests that require
+            additional review or action.
+
+        </li>
+
+
+    </ul>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     CLOSE MAIN CONTENT
+===================================================== -->
+
+</main>
+
+</div>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="portal-footer">
+
+
+    <div class="footer-brand">
+
+
+        <img src="../images/dlsjbc-logo.png"
+             alt="De La Salle John Bosco College Logo">
+
+
+        <div>
+
+            <strong>
+                ATCRS
+            </strong>
+
+
+            <span>
+                Registrar Administration Portal
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="footer-links">
+
+
+        <a href="../terms.html">
+            Terms of Use
+        </a>
+
+
+        <a href="../policy.html">
+            Policy
+        </a>
+
+
+        <a href="../index.html">
+            Public Website
+        </a>
+
+
+    </div>
+
+
+
+    <p>
+
+        © 2026 De La Salle John Bosco College.
+        All Rights Reserved.
+
+    </p>
+
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="../js/script.js"></script>
+
+
+</body>
+
+</html>
