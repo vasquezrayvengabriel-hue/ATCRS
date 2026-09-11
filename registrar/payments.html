@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Payments | Registrar | ATCRS</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+<!-- =====================================================
+     REGISTRAR HEADER
+     ===================================================== -->
+
+<header class="portal-header">
+
+    <a href="dashboard.html" class="portal-brand">
+
+        <div class="brand-logo">
+            <img
+                src="../images/dlsjbc-logo.png"
+                alt="De La Salle John Bosco College Logo"
+            >
+        </div>
+
+        <div class="brand-text">
+            <strong>ATCRS</strong>
+            <span>Registrar Portal</span>
+        </div>
+
+    </a>
+
+
+    <div class="portal-user">
+
+        <div class="portal-user-info">
+            <strong>Registrar</strong>
+            <span>Administration</span>
+        </div>
+
+        <button
+            type="button"
+            class="logout-btn"
+            id="registrarLogoutBtn"
+        >
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     PORTAL LAYOUT
+     ===================================================== -->
+
+<div class="portal-layout">
+
+
+    <!-- =================================================
+         SIDEBAR
+         ================================================= -->
+
+    <aside class="portal-sidebar">
+
+        <div class="sidebar-profile">
+
+            <div class="sidebar-avatar">
+                <i class="fa-solid fa-user-tie"></i>
+            </div>
+
+            <div>
+                <strong>Registrar</strong>
+                <span>Administrator</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html">
+                <i class="fa-solid fa-gauge-high"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="students.html">
+                <i class="fa-solid fa-users"></i>
+                <span>Students</span>
+            </a>
+
+            <a href="requests.html">
+                <i class="fa-solid fa-file-lines"></i>
+                <span>Requests</span>
+            </a>
+
+            <a href="payments.html" class="active">
+                <i class="fa-solid fa-money-bill-wave"></i>
+                <span>Payments</span>
+            </a>
+
+            <a href="clearance.html">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Clearance</span>
+            </a>
+
+            <a href="documents.html">
+                <i class="fa-solid fa-folder-open"></i>
+                <span>Documents</span>
+            </a>
+
+            <div class="sidebar-divider"></div>
+
+            <a href="../index.html">
+                <i class="fa-solid fa-globe"></i>
+                <span>Public Website</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- =================================================
+         MAIN CONTENT
+         ================================================= -->
+
+    <main class="portal-main">
+
+        <!-- PART 14B goes here -->
+
+    </main>
+
+</div>
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer class="portal-footer">
+
+    <p>
+        &copy; 2026 De La Salle John Bosco College.
+        All Rights Reserved.
+    </p>
+
+    <div class="footer-links">
+
+        <a href="../terms.html">
+            Terms of Use
+        </a>
+
+        <a href="../policy.html">
+            Policy
+        </a>
+
+        <a href="../index.html">
+            Public Website
+        </a>
+
+    </div>
+
+</footer>
+
+
+<!-- Main JavaScript -->
+<script src="../js/script.js"></script>
+
+</body>
+
+</html>
+<!-- PART 14B goes here -->
+<!-- =====================================================
+     PAGE HEADING
+     ===================================================== -->
+
+<section class="page-heading">
+
+    <div>
+        <span class="section-label">
+            Registrar Administration
+        </span>
+
+        <h1>
+            Payment Management
+        </h1>
+
+        <p>
+            Review and manage payment records associated
+            with student document requests.
+        </p>
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PAYMENT SUMMARY
+     ===================================================== -->
+
+<section class="dashboard-grid">
+
+
+    <!-- Total Payments -->
+
+    <div class="summary-card">
+
+        <div class="summary-icon">
+            <i class="fa-solid fa-receipt"></i>
+        </div>
+
+        <div>
+            <span>Total Payment Records</span>
+            <strong id="paymentsTotalCount">0</strong>
+        </div>
+
+    </div>
+
+
+    <!-- Paid -->
+
+    <div class="summary-card">
+
+        <div class="summary-icon">
+            <i class="fa-solid fa-circle-check"></i>
+        </div>
+
+        <div>
+            <span>Paid</span>
+            <strong id="paymentsPaidCount">0</strong>
+        </div>
+
+    </div>
+
+
+    <!-- Pending -->
+
+    <div class="summary-card">
+
+        <div class="summary-icon">
+            <i class="fa-solid fa-clock"></i>
+        </div>
+
+        <div>
+            <span>Pending</span>
+            <strong id="paymentsPendingCount">0</strong>
+        </div>
+
+    </div>
+
+
+    <!-- Total Amount -->
+
+    <div class="summary-card">
+
+        <div class="summary-icon">
+            <i class="fa-solid fa-peso-sign"></i>
+        </div>
+
+        <div>
+            <span>Total Amount</span>
+            <strong id="paymentsTotalAmount">₱0.00</strong>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SEARCH AND FILTER
+     ===================================================== -->
+
+<section class="dashboard-card">
+
+    <div class="card-header">
+
+        <div>
+            <span class="section-label">
+                Payment Records
+            </span>
+
+            <h2>
+                Search Payments
+            </h2>
+        </div>
+
+        <span
+            class="record-count"
+            id="paymentRecordCount"
+        >
+            0 records
+        </span>
+
+    </div>
+
+
+    <form
+        class="search-form"
+        id="paymentSearchForm"
+    >
+
+        <div class="search-input-group">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                type="search"
+                id="paymentSearchInput"
+                class="search-field"
+                placeholder="Search Request ID, Student ID, or student name..."
+                autocomplete="off"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="paymentStatusFilter">
+                Payment Status
+            </label>
+
+            <select id="paymentStatusFilter">
+
+                <option value="all">
+                    All Payment Status
+                </option>
+
+                <option value="Pending">
+                    Pending
+                </option>
+
+                <option value="Paid">
+                    Paid
+                </option>
+
+                <option value="Failed">
+                    Failed
+                </option>
+
+                <option value="Refunded">
+                    Refunded
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="search-clear-btn"
+            id="clearPaymentSearch"
+        >
+            <i class="fa-solid fa-rotate-left"></i>
+            Clear
+        </button>
+
+    </form>
+
+</section>
+<!-- =====================================================
+     PAYMENT RECORDS TABLE
+     ===================================================== -->
+
+<section class="dashboard-card">
+
+    <div class="card-header">
+
+        <div>
+            <span class="section-label">
+                Transactions
+            </span>
+
+            <h2>
+                Payment Records
+            </h2>
+        </div>
+
+    </div>
+
+
+    <div class="table-wrapper">
+
+        <table class="data-table payment-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        Payment Reference
+                    </th>
+
+                    <th>
+                        Request ID
+                    </th>
+
+                    <th>
+                        Student
+                    </th>
+
+                    <th>
+                        Document
+                    </th>
+
+                    <th>
+                        Amount
+                    </th>
+
+                    <th>
+                        Payment Method
+                    </th>
+
+                    <th>
+                        Date
+                    </th>
+
+                    <th>
+                        Status
+                    </th>
+
+                    <th>
+                        Action
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="registrarPaymentsTable">
+
+                <!-- Payment records will be loaded by JavaScript -->
+
+                <tr>
+
+                    <td
+                        colspan="9"
+                        class="table-empty"
+                    >
+
+                        <i class="fa-solid fa-receipt"></i>
+
+                        <p>
+                            No payment records available.
+                        </p>
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PAYMENT DETAILS
+     ===================================================== -->
+
+<section
+    class="dashboard-card"
+    id="registrarPaymentDetails"
+    style="display:none;"
+>
+
+    <div class="card-header">
+
+        <div>
+
+            <span class="section-label">
+                Payment Information
+            </span>
+
+            <h2>
+                Payment Details
+            </h2>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="btn btn-secondary"
+            id="closeRegistrarPaymentDetails"
+        >
+            <i class="fa-solid fa-xmark"></i>
+            Close
+        </button>
+
+    </div>
+
+
+    <!-- Student Information -->
+
+    <div class="profile-information-grid">
+
+
+        <div class="information-item">
+
+            <span>
+                Student Name
+            </span>
+
+            <strong id="registrarPaymentStudentName">
+                —
+            </strong>
+
+        </div>
+
+
+        <div class="information-item">
+
+            <span>
+                Student ID
+            </span>
+
+            <strong id="registrarPaymentStudentId">
+                —
+            </strong>
+
+        </div>
+
+
+        <div class="information-item">
+
+            <span>
+                Email Address
+            </span>
+
+            <strong id="registrarPaymentEmail">
+                —
+            </strong>
+
+        </div>
+
+
+        <div class="information-item">
+
+            <span>
+                Request ID
+            </span>
+
+            <strong id="registrarPaymentRequestId">
+                —
+            </strong>
+
+        </div>
+
+
+        <div class="information-item">
+
+            <span>
+                Document
+            </span>
+
+            <strong id="registrarPaymentDocument">
+                —
+            </strong>
+
+        </div>
+
+
+        <div class="information-item">
+
+            <span>
+                Number of Copies
+            </span>
+
+            <strong id="registrarPaymentCopies">
+                —
+            </strong>
+
+        </div>
+
+
+        <div class="information-item">
+
+            <span>
+                Payment Reference
+            </span>
+
+            <strong id="registrarPaymentReference">
+                —
+            </strong>
+
+        </div>
+
+
+        <div class="information-item">
+
+            <span>
+                Payment Date
+            </span>
+
+            <strong id="registrarPaymentDate">
+                —
+            </strong>
+
+        </div>
+
+
+        <div class="information-item">
+
+            <span>
+                Payment Method
+            </span>
+
+            <strong id="registrarPaymentMethod">
+                —
+            </strong>
+
+        </div>
+
+
+        <div class="information-item">
+
+            <span>
+                Amount
+            </span>
+
+            <strong id="registrarPaymentAmount">
+                ₱0.00
+            </strong>
+
+        </div>
+
+
+        <div class="information-item">
+
+            <span>
+                Current Status
+            </span>
+
+            <strong
+                class="payment-status"
+                id="registrarPaymentStatus"
+            >
+                Pending
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <!-- Payment Notes -->
+
+    <div class="form-group">
+
+        <label for="registrarPaymentNotes">
+            Registrar Notes
+        </label>
+
+        <textarea
+            id="registrarPaymentNotes"
+            rows="5"
+            placeholder="Enter notes regarding this payment record..."
+        ></textarea>
+
+    </div>
+
+
+    <!-- Update Status -->
+
+    <div class="form-group">
+
+        <label for="registrarPaymentStatusSelect">
+            Update Payment Status
+        </label>
+
+        <select id="registrarPaymentStatusSelect">
+
+            <option value="Pending">
+                Pending
+            </option>
+
+            <option value="Paid">
+                Paid
+            </option>
+
+            <option value="Failed">
+                Failed
+            </option>
+
+            <option value="Refunded">
+                Refunded
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- Actions -->
+
+    <div class="form-actions">
+
+        <button
+            type="button"
+            class="btn btn-secondary"
+            id="saveRegistrarPaymentNotes"
+        >
+            <i class="fa-solid fa-note-sticky"></i>
+            Save Notes
+        </button>
+
+
+        <button
+            type="button"
+            class="btn btn-primary"
+            id="updateRegistrarPaymentStatus"
+        >
+            <i class="fa-solid fa-floppy-disk"></i>
+            Update Payment
+        </button>
+
+    </div>
+
+
+    <div
+        class="form-message"
+        id="registrarPaymentMessage"
+    ></div>
+
+</section>
+<!-- =====================================================
+     PAYMENT MANAGEMENT GUIDELINES
+     ===================================================== -->
+
+<section class="dashboard-card security-notice">
+
+    <div class="notice-icon">
+
+        <i class="fa-solid fa-money-check-dollar"></i>
+
+    </div>
+
+
+    <div class="notice-content">
+
+        <h3>
+            Payment Management Guidelines
+        </h3>
+
+        <p>
+            Review payment records carefully before updating
+            their status. Confirm that the payment reference,
+            request information, amount, and student details
+            correspond to the correct document request.
+        </p>
+
+        <p>
+            A payment marked as paid may proceed to the next
+            required processing stage when the student's
+            clearance and document requirements have also
+            been completed.
+        </p>
+
+        <p>
+            Keep payment notes clear and relevant so that
+            other authorized Registrar personnel can
+            understand the processing history of a request.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PAYMENT INFORMATION
+     ===================================================== -->
+
+<section class="dashboard-card information-card">
+
+    <div class="card-header">
+
+        <div>
+
+            <span class="section-label">
+                Payment Information
+            </span>
+
+            <h2>
+                Processing Reminders
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <ul class="information-list">
+
+        <li>
+            <i class="fa-solid fa-check"></i>
+            Check the request ID before reviewing a payment.
+        </li>
+
+        <li>
+            <i class="fa-solid fa-check"></i>
+            Confirm that the student information matches
+            the associated request.
+        </li>
+
+        <li>
+            <i class="fa-solid fa-check"></i>
+            Record payment references accurately.
+        </li>
+
+        <li>
+            <i class="fa-solid fa-check"></i>
+            Update payment status only after completing
+            the appropriate payment review.
+        </li>
+
+        <li>
+            <i class="fa-solid fa-check"></i>
+            Coordinate payment status with document
+            processing and clearance requirements.
+        </li>
+
+    </ul>
+
+</section>
+
+
+<!-- =====================================================
+     CLOSE MAIN CONTENT
+     ===================================================== -->
+
+</main>
+
+</div>
