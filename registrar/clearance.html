@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Clearance | Registrar | ATCRS</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+
+<!-- =====================================================
+     REGISTRAR HEADER
+     ===================================================== -->
+
+<header class="portal-header">
+
+    <a href="dashboard.html" class="portal-brand">
+
+        <div class="brand-logo">
+
+            <img
+                src="../images/dlsjbc-logo.png"
+                alt="De La Salle John Bosco College Logo"
+            >
+
+        </div>
+
+
+        <div class="brand-text">
+
+            <strong>ATCRS</strong>
+
+            <span>
+                Registrar Portal
+            </span>
+
+        </div>
+
+    </a>
+
+
+    <div class="portal-user">
+
+        <div class="portal-user-info">
+
+            <strong>
+                Registrar
+            </strong>
+
+            <span>
+                Administration
+            </span>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="logout-btn"
+            id="registrarLogoutBtn"
+        >
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            Logout
+
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     PORTAL LAYOUT
+     ===================================================== -->
+
+<div class="portal-layout">
+
+
+    <!-- =================================================
+         SIDEBAR
+         ================================================= -->
+
+    <aside class="portal-sidebar">
+
+
+        <div class="sidebar-profile">
+
+            <div class="sidebar-avatar">
+
+                <i class="fa-solid fa-user-tie"></i>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    Registrar
+                </strong>
+
+                <span>
+                    Administrator
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <nav class="sidebar-nav">
+
+
+            <a href="dashboard.html">
+
+                <i class="fa-solid fa-gauge-high"></i>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a href="students.html">
+
+                <i class="fa-solid fa-users"></i>
+
+                <span>
+                    Students
+                </span>
+
+            </a>
+
+
+            <a href="requests.html">
+
+                <i class="fa-solid fa-file-lines"></i>
+
+                <span>
+                    Requests
+                </span>
+
+            </a>
+
+
+            <a href="payments.html">
+
+                <i class="fa-solid fa-money-bill-wave"></i>
+
+                <span>
+                    Payments
+                </span>
+
+            </a>
+
+
+            <a href="clearance.html" class="active">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                <span>
+                    Clearance
+                </span>
+
+            </a>
+
+
+            <a href="documents.html">
+
+                <i class="fa-solid fa-folder-open"></i>
+
+                <span>
+                    Documents
+                </span>
+
+            </a>
+
+
+            <div class="sidebar-divider"></div>
+
+
+            <a href="../index.html">
+
+                <i class="fa-solid fa-globe"></i>
+
+                <span>
+                    Public Website
+                </span>
+
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+
+    <!-- =================================================
+         MAIN CONTENT
+         ================================================= -->
+
+    <main class="portal-main">
+
+        <!-- PART 15B goes here -->
+
+    </main>
+
+</div>
+
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer class="portal-footer">
+
+    <p>
+
+        &copy; 2026 De La Salle John Bosco College.
+        All Rights Reserved.
+
+    </p>
+
+
+    <div class="footer-links">
+
+        <a href="../terms.html">
+            Terms of Use
+        </a>
+
+        <a href="../policy.html">
+            Policy
+        </a>
+
+        <a href="../index.html">
+            Public Website
+        </a>
+
+    </div>
+
+</footer>
+
+
+
+<!-- Main JavaScript -->
+<script src="../js/script.js"></script>
+
+</body>
+
+                  </html>
+                  <!-- =====================================================
+     PAGE HEADING
+     ===================================================== -->
+
+<section class="page-heading">
+
+    <div>
+
+        <span class="section-label">
+            Registrar Administration
+        </span>
+
+        <h1>
+            Clearance Management
+        </h1>
+
+        <p>
+            Review and manage clearance requirements
+            associated with student document requests.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CLEARANCE SUMMARY
+     ===================================================== -->
+
+<section class="dashboard-grid">
+
+
+    <!-- Total Clearance Records -->
+
+    <div class="summary-card">
+
+        <div class="summary-icon">
+
+            <i class="fa-solid fa-clipboard-list"></i>
+
+        </div>
+
+        <div>
+
+            <span>
+                Total Clearance Records
+            </span>
+
+            <strong id="clearanceTotalCount">
+                0
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <!-- Cleared -->
+
+    <div class="summary-card">
+
+        <div class="summary-icon">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+        </div>
+
+        <div>
+
+            <span>
+                Cleared
+            </span>
+
+            <strong id="clearanceClearedCount">
+                0
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <!-- Pending -->
+
+    <div class="summary-card">
+
+        <div class="summary-icon">
+
+            <i class="fa-solid fa-clock"></i>
+
+        </div>
+
+        <div>
+
+            <span>
+                Pending
+            </span>
+
+            <strong id="clearancePendingCount">
+                0
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <!-- Issues -->
+
+    <div class="summary-card">
+
+        <div class="summary-icon">
+
+            <i class="fa-solid fa-triangle-exclamation"></i>
+
+        </div>
+
+        <div>
+
+            <span>
+                With Issues
+            </span>
+
+            <strong id="clearanceIssuesCount">
+                0
+            </strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SEARCH AND FILTER
+     ===================================================== -->
+
+<section class="dashboard-card">
+
+    <div class="card-header">
+
+        <div>
+
+            <span class="section-label">
+                Clearance Records
+            </span>
+
+            <h2>
+                Search Clearance
+            </h2>
+
+        </div>
+
+
+        <span
+            class="record-count"
+            id="clearanceRecordCount"
+        >
+            0 records
+        </span>
+
+    </div>
+
+
+    <form
+        class="search-form"
+        id="clearanceSearchForm"
+    >
+
+
+        <div class="search-input-group">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                type="search"
+                id="clearanceSearchInput"
+                class="search-field"
+                placeholder="Search Student ID, name, or Request ID..."
+                autocomplete="off"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="clearanceStatusFilter">
+                Clearance Status
+            </label>
+
+            <select id="clearanceStatusFilter">
+
+                <option value="all">
+                    All Clearance Status
+                </option>
+
+                <option value="Pending">
+                    Pending
+                </option>
+
+                <option value="Cleared">
+                    Cleared
+                </option>
+
+                <option value="With Issues">
+                    With Issues
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="search-clear-btn"
+            id="clearClearanceSearch"
+        >
+
+            <i class="fa-solid fa-rotate-left"></i>
+
+            Clear
+
+        </button>
+
+    </form>
+
+</section>
+<!-- =====================================================
+     CLEARANCE RECORDS TABLE
+     ===================================================== -->
+
+<section class="dashboard-card">
+
+    <div class="card-header">
+
+        <div>
+
+            <span class="section-label">
+                Student Clearance
+            </span>
+
+            <h2>
+                Clearance Records
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="table-wrapper">
+
+        <table class="data-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        Request ID
+                    </th>
+
+                    <th>
+                        Student
+                    </th>
+
+                    <th>
+                        Student ID
+                    </th>
+
+                    <th>
+                        Document
+                    </th>
+
+                    <th>
+                        Financial
+                    </th>
+
+                    <th>
+                        Library
+                    </th>
+
+                    <th>
+                        Overall Status
+                    </th>
+
+                    <th>
+                        Action
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="registrarClearanceTable">
+
+                <tr>
+
+                    <td
+                        colspan="8"
+                        class="table-empty"
+                    >
+
+                        <i class="fa-solid fa-clipboard-check"></i>
+
+                        <p>
+                            No clearance records available.
+                        </p>
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CLEARANCE DETAILS
+     ===================================================== -->
+
+<section
+    class="dashboard-card"
+    id="registrarClearanceDetails"
+    style="display:none;"
+>
+
+
+    <div class="card-header">
+
+        <div>
+
+            <span class="section-label">
+                Clearance Information
+            </span>
+
+            <h2>
+                Clearance Details
+            </h2>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="btn btn-secondary"
+            id="closeRegistrarClearanceDetails"
+        >
+
+            <i class="fa-solid fa-xmark"></i>
+
+            Close
+
+        </button>
+
+    </div>
+
+
+
+    <!-- Student Information -->
+
+    <div class="profile-information-grid">
+
+
+        <div class="information-item">
+
+            <span>
+                Student Name
+            </span>
+
+            <strong id="registrarClearanceStudentName">
+                —
+            </strong>
+
+        </div>
+
+
+        <div class="information-item">
+
+            <span>
+                Student ID
+            </span>
+
+            <strong id="registrarClearanceStudentId">
+                —
+            </strong>
+
+        </div>
+
+
+        <div class="information-item">
+
+            <span>
+                Email Address
+            </span>
+
+            <strong id="registrarClearanceEmail">
+                —
+            </strong>
+
+        </div>
+
+
+        <div class="information-item">
+
+            <span>
+                Request ID
+            </span>
+
+            <strong id="registrarClearanceRequestId">
+                —
+            </strong>
+
+        </div>
+
+
+        <div class="information-item">
+
+            <span>
+                Document
+            </span>
+
+            <strong id="registrarClearanceDocument">
+                —
+            </strong>
+
+        </div>
+
+
+        <div class="information-item">
+
+            <span>
+                Request Date
+            </span>
+
+            <strong id="registrarClearanceRequestDate">
+                —
+            </strong>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Clearance Status -->
+
+    <div class="clearance-grid">
+
+
+        <!-- Registrar Review -->
+
+        <div class="clearance-item">
+
+            <div class="clearance-item-icon">
+
+                <i class="fa-solid fa-user-check"></i>
+
+            </div>
+
+            <div>
+
+                <span>
+                    Registrar Review
+                </span>
+
+                <strong id="registrarReviewClearance">
+                    Pending
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- Financial -->
+
+        <div class="clearance-item">
+
+            <div class="clearance-item-icon">
+
+                <i class="fa-solid fa-money-bill"></i>
+
+            </div>
+
+            <div>
+
+                <span>
+                    Financial Clearance
+                </span>
+
+                <strong id="registrarFinancialClearance">
+                    Pending
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- Library -->
+
+        <div class="clearance-item">
+
+            <div class="clearance-item-icon">
+
+                <i class="fa-solid fa-book"></i>
+
+            </div>
+
+            <div>
+
+                <span>
+                    Library Clearance
+                </span>
+
+                <strong id="registrarLibraryClearance">
+                    Pending
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- Overall -->
+
+        <div class="clearance-item">
+
+            <div class="clearance-item-icon">
+
+                <i class="fa-solid fa-shield-check"></i>
+
+            </div>
+
+            <div>
+
+                <span>
+                    Overall Clearance
+                </span>
+
+                <strong id="registrarOverallClearance">
+                    Pending
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         CLEARANCE UPDATE
+         ================================================= -->
+
+    <div class="form-group">
+
+        <label for="registrarFinancialStatus">
+
+            Financial Clearance
+
+        </label>
+
+
+        <select id="registrarFinancialStatus">
+
+            <option value="Pending">
+                Pending
+            </option>
+
+            <option value="Cleared">
+                Cleared
+            </option>
+
+            <option value="With Issues">
+                With Issues
+            </option>
+
+        </select>
+
+    </div>
+
+
+
+    <div class="form-group">
+
+        <label for="registrarLibraryStatus">
+
+            Library Clearance
+
+        </label>
+
+
+        <select id="registrarLibraryStatus">
+
+            <option value="Pending">
+                Pending
+            </option>
+
+            <option value="Cleared">
+                Cleared
+            </option>
+
+            <option value="With Issues">
+                With Issues
+            </option>
+
+        </select>
+
+    </div>
+
+
+
+    <div class="form-group">
+
+        <label for="registrarReviewStatus">
+
+            Registrar Review
+
+        </label>
+
+
+        <select id="registrarReviewStatus">
+
+            <option value="Pending">
+                Pending
+            </option>
+
+            <option value="Cleared">
+                Cleared
+            </option>
+
+            <option value="With Issues">
+                With Issues
+            </option>
+
+        </select>
+
+    </div>
+
+
+
+    <div class="form-group">
+
+        <label for="registrarClearanceNotes">
+
+            Clearance Notes
+
+        </label>
+
+
+        <textarea
+            id="registrarClearanceNotes"
+            rows="5"
+            placeholder="Enter relevant clearance notes..."
+        ></textarea>
+
+    </div>
+
+
+
+    <!-- Update Button -->
+
+    <div class="form-actions">
+
+        <button
+            type="button"
+            class="btn btn-primary"
+            id="updateRegistrarClearance"
+        >
+
+            <i class="fa-solid fa-floppy-disk"></i>
+
+            Update Clearance
+
+        </button>
+
+    </div>
+
+
+    <div
+        class="form-message"
+        id="registrarClearanceMessage"
+    ></div>
+
+</section>
+<!-- =====================================================
+     CLEARANCE GUIDELINES
+     ===================================================== -->
+
+<section class="dashboard-card security-notice">
+
+    <div class="notice-icon">
+
+        <i class="fa-solid fa-clipboard-check"></i>
+
+    </div>
+
+
+    <div class="notice-content">
+
+        <h3>
+            Clearance Review Guidelines
+        </h3>
+
+
+        <p>
+            Clearance should be reviewed before an official
+            school document is approved for release.
+            Confirm that the required student records and
+            clearance information have been properly checked.
+        </p>
+
+
+        <p>
+            Financial and library clearance statuses should
+            be updated according to the student's current
+            institutional records.
+        </p>
+
+
+        <p>
+            If an issue is identified, record a clear note
+            describing the matter so that the request can
+            be reviewed and processed appropriately.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CLEARANCE INFORMATION
+     ===================================================== -->
+
+<section class="dashboard-card information-card">
+
+
+    <div class="card-header">
+
+        <div>
+
+            <span class="section-label">
+                Processing Reminders
+            </span>
+
+            <h2>
+                Clearance Requirements
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <ul class="information-list">
+
+
+        <li>
+
+            <i class="fa-solid fa-check"></i>
+
+            Verify that the correct student and request
+            are being reviewed.
+
+        </li>
+
+
+        <li>
+
+            <i class="fa-solid fa-check"></i>
+
+            Review the student's financial clearance
+            status.
+
+        </li>
+
+
+        <li>
+
+            <i class="fa-solid fa-check"></i>
+
+            Review the student's library clearance status.
+
+        </li>
+
+
+        <li>
+
+            <i class="fa-solid fa-check"></i>
+
+            Complete the Registrar review before approving
+            the clearance.
+
+        </li>
+
+
+        <li>
+
+            <i class="fa-solid fa-check"></i>
+
+            Add notes whenever an issue requires further
+            review.
+
+        </li>
+
+
+        <li>
+
+            <i class="fa-solid fa-check"></i>
+
+            Confirm that all required clearance conditions
+            are satisfied before document release.
+
+        </li>
+
+    </ul>
+
+</section>
+
+
+<!-- =====================================================
+     CLOSE MAIN CONTENT
+     ===================================================== -->
+
+</main>
+
+</div>
