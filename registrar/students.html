@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Students | Registrar Portal | ATCRS</title>
+
+
+    <!-- GOOGLE FONT -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+
+    <!-- FONT AWESOME -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+    <!-- MAIN CSS -->
+
+    <link rel="stylesheet"
+          href="../css/style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     REGISTRAR PORTAL HEADER
+===================================================== -->
+
+<header class="portal-header">
+
+
+    <div class="portal-brand">
+
+        <a href="dashboard.html"
+           class="brand">
+
+
+            <div class="brand-logo">
+
+                <img src="../images/dlsjbc-logo.png"
+                     alt="De La Salle John Bosco College Logo">
+
+            </div>
+
+
+            <div class="brand-text">
+
+                <strong>
+                    ATCRS
+                </strong>
+
+                <span>
+                    Registrar Administration Portal
+                </span>
+
+            </div>
+
+
+        </a>
+
+    </div>
+
+
+
+    <div class="portal-user">
+
+
+        <div class="portal-user-info">
+
+            <span>
+                Private Administration Area
+            </span>
+
+            <strong>
+                Registrar
+            </strong>
+
+        </div>
+
+
+        <button type="button"
+                class="logout-btn"
+                id="registrarLogoutBtn">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            Logout
+
+        </button>
+
+
+    </div>
+
+
+</header>
+
+
+
+<!-- =====================================================
+     PORTAL LAYOUT
+===================================================== -->
+
+<div class="portal-layout">
+
+
+
+<!-- =====================================================
+     REGISTRAR SIDEBAR
+===================================================== -->
+
+<aside class="portal-sidebar registrar-sidebar">
+
+
+    <!-- SIDEBAR PROFILE -->
+
+    <div class="sidebar-profile">
+
+
+        <div class="sidebar-avatar registrar-avatar">
+
+            <i class="fa-solid fa-user-tie"></i>
+
+        </div>
+
+
+        <div>
+
+            <strong>
+                Registrar
+            </strong>
+
+            <span>
+                System Administrator
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- SIDEBAR NAVIGATION -->
+
+    <nav class="sidebar-nav">
+
+
+        <a href="dashboard.html">
+
+            <i class="fa-solid fa-gauge-high"></i>
+
+            <span>
+                Dashboard
+            </span>
+
+        </a>
+
+
+
+        <a href="students.html"
+           class="active">
+
+            <i class="fa-solid fa-users"></i>
+
+            <span>
+                Students
+            </span>
+
+        </a>
+
+
+
+        <a href="requests.html">
+
+            <i class="fa-solid fa-file-circle-check"></i>
+
+            <span>
+                Document Requests
+            </span>
+
+        </a>
+
+
+
+        <a href="payments.html">
+
+            <i class="fa-solid fa-wallet"></i>
+
+            <span>
+                Payments
+            </span>
+
+        </a>
+
+
+
+        <a href="clearance.html">
+
+            <i class="fa-solid fa-clipboard-check"></i>
+
+            <span>
+                Clearance
+            </span>
+
+        </a>
+
+
+
+        <a href="documents.html">
+
+            <i class="fa-solid fa-folder-open"></i>
+
+            <span>
+                Released Documents
+            </span>
+
+        </a>
+
+
+
+        <div class="sidebar-divider"></div>
+
+
+
+        <a href="../index.html">
+
+            <i class="fa-solid fa-house"></i>
+
+            <span>
+                Public Website
+            </span>
+
+        </a>
+
+
+    </nav>
+
+
+</aside>
+
+
+
+<!-- =====================================================
+     MAIN CONTENT
+===================================================== -->
+
+<main class="portal-main">
+
+
+
+    <!-- PAGE HEADING -->
+
+    <div class="page-heading">
+
+
+        <div>
+
+            <span class="section-label">
+                Registrar Administration
+            </span>
+
+
+            <h1>
+                Student Records
+            </h1>
+
+
+            <p>
+                View and manage registered student information
+                and account records.
+            </p>
+
+        </div>
+
+
+        <div class="dashboard-date">
+
+            <i class="fa-solid fa-users"></i>
+
+            <span>
+                Student Directory
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         STUDENT SUMMARY
+    ================================================== -->
+
+    <div class="dashboard-grid">
+
+
+        <div class="dashboard-card summary-card">
+
+
+            <div class="summary-icon">
+
+                <i class="fa-solid fa-users"></i>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Registered Students
+                </span>
+
+
+                <strong id="studentsTotalCount">
+                    0
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="dashboard-card summary-card">
+
+
+            <div class="summary-icon">
+
+                <i class="fa-solid fa-user-check"></i>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Active Accounts
+                </span>
+
+
+                <strong id="studentsActiveCount">
+                    0
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="dashboard-card summary-card">
+
+
+            <div class="summary-icon">
+
+                <i class="fa-solid fa-file-circle-check"></i>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Students With Requests
+                </span>
+
+
+                <strong id="studentsWithRequestsCount">
+                    0
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="dashboard-card summary-card">
+
+
+            <div class="summary-icon">
+
+                <i class="fa-solid fa-calendar-day"></i>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Recent Registrations
+                </span>
+
+
+                <strong id="recentStudentsCount">
+                    0
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+                  </div>
+                  <!-- =====================================================
+     STUDENT SEARCH
+===================================================== -->
+
+<section class="dashboard-card">
+
+
+    <div class="card-header">
+
+
+        <div>
+
+            <h2>
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                Search Student Records
+
+            </h2>
+
+
+            <p>
+                Search using a student's name, email address,
+                or seven-digit Student ID.
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="search-form">
+
+
+        <div class="form-group search-input-group">
+
+
+            <label for="studentSearchInput">
+
+                <i class="fa-solid fa-search"></i>
+
+                Search Students
+
+            </label>
+
+
+            <div class="search-field">
+
+                <input type="search"
+                       id="studentSearchInput"
+                       placeholder="Search by name, email, or Student ID">
+
+
+                <button type="button"
+                        class="search-clear-btn"
+                        id="clearStudentSearch"
+                        aria-label="Clear student search">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="form-group">
+
+
+            <label for="studentEducationFilter">
+
+                <i class="fa-solid fa-graduation-cap"></i>
+
+                Educational Level
+
+            </label>
+
+
+            <select id="studentEducationFilter">
+
+                <option value="">
+                    All Educational Levels
+                </option>
+
+                <option value="Kindergarten">
+                    Kindergarten
+                </option>
+
+                <option value="Grade 1">
+                    Grade 1
+                </option>
+
+                <option value="Grade 2">
+                    Grade 2
+                </option>
+
+                <option value="Grade 3">
+                    Grade 3
+                </option>
+
+                <option value="Grade 4">
+                    Grade 4
+                </option>
+
+                <option value="Grade 5">
+                    Grade 5
+                </option>
+
+                <option value="Grade 6">
+                    Grade 6
+                </option>
+
+                <option value="Grade 7">
+                    Grade 7
+                </option>
+
+                <option value="Grade 8">
+                    Grade 8
+                </option>
+
+                <option value="Grade 9">
+                    Grade 9
+                </option>
+
+                <option value="Grade 10">
+                    Grade 10
+                </option>
+
+                <option value="Grade 11">
+                    Grade 11
+                </option>
+
+                <option value="Grade 12">
+                    Grade 12
+                </option>
+
+                <option value="College">
+                    College
+                </option>
+
+            </select>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     STUDENT RECORDS TABLE
+===================================================== -->
+
+<section class="dashboard-card">
+
+
+    <div class="card-header">
+
+
+        <div>
+
+            <h2>
+
+                <i class="fa-solid fa-table-list"></i>
+
+                Registered Student Records
+
+            </h2>
+
+
+            <p>
+                Review student account information and activity.
+            </p>
+
+        </div>
+
+
+        <span class="record-count"
+              id="studentRecordCount">
+
+            0 Records
+
+        </span>
+
+
+    </div>
+
+
+
+    <div class="table-wrapper">
+
+
+        <table class="data-table student-table">
+
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        Student ID
+                    </th>
+
+                    <th>
+                        Full Name
+                    </th>
+
+                    <th>
+                        Email Address
+                    </th>
+
+                    <th>
+                        Educational Level
+                    </th>
+
+                    <th>
+                        Course / Program
+                    </th>
+
+                    <th>
+                        Account Status
+                    </th>
+
+                    <th>
+                        Action
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="studentsTableBody">
+
+
+                <tr>
+
+                    <td colspan="7"
+                        class="table-empty">
+
+
+                        <i class="fa-solid fa-users"></i>
+
+
+                        <span>
+                            No registered students found.
+                        </span>
+
+
+                    </td>
+
+                </tr>
+
+
+            </tbody>
+
+
+        </table>
+
+
+    </div>
+
+
+</section>
+<!-- =====================================================
+     STUDENT INFORMATION DETAILS
+===================================================== -->
+
+<section class="dashboard-card"
+         id="studentDetailsCard"
+         style="display:none;">
+
+
+    <div class="card-header">
+
+
+        <div>
+
+            <h2>
+
+                <i class="fa-solid fa-user-graduate"></i>
+
+                Student Information
+
+            </h2>
+
+
+            <p>
+                Review the selected student's account details
+                and document request activity.
+            </p>
+
+        </div>
+
+
+        <button type="button"
+                class="btn btn-secondary"
+                id="closeStudentDetails">
+
+            <i class="fa-solid fa-xmark"></i>
+
+            Close
+
+        </button>
+
+
+    </div>
+
+
+
+    <!-- STUDENT PROFILE -->
+
+    <div class="student-profile-summary">
+
+
+        <div class="student-profile-avatar">
+
+            <i class="fa-solid fa-user"></i>
+
+        </div>
+
+
+        <div>
+
+
+            <h3 id="selectedStudentName">
+                Student Name
+            </h3>
+
+
+            <p id="selectedStudentId">
+                Student ID: —
+            </p>
+
+
+            <span class="status-badge status-approved"
+                  id="selectedStudentStatus">
+
+                Active Account
+
+            </span>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- STUDENT DETAILS GRID -->
+
+    <div class="information-grid">
+
+
+        <div class="information-item">
+
+
+            <span>
+                Email Address
+            </span>
+
+
+            <strong id="selectedStudentEmail">
+                —
+            </strong>
+
+
+        </div>
+
+
+
+        <div class="information-item">
+
+
+            <span>
+                Student ID
+            </span>
+
+
+            <strong id="selectedStudentIdDetail">
+                —
+            </strong>
+
+
+        </div>
+
+
+
+        <div class="information-item">
+
+
+            <span>
+                Educational Level
+            </span>
+
+
+            <strong id="selectedStudentEducation">
+                —
+            </strong>
+
+
+        </div>
+
+
+
+        <div class="information-item">
+
+
+            <span>
+                Course / Program
+            </span>
+
+
+            <strong id="selectedStudentCourse">
+                —
+            </strong>
+
+
+        </div>
+
+
+
+        <div class="information-item">
+
+
+            <span>
+                Account Created
+            </span>
+
+
+            <strong id="selectedStudentCreated">
+                —
+            </strong>
+
+
+        </div>
+
+
+
+        <div class="information-item">
+
+
+            <span>
+                Total Document Requests
+            </span>
+
+
+            <strong id="selectedStudentRequestCount">
+                0
+            </strong>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- CLEARANCE STATUS -->
+
+    <div class="clearance-grid">
+
+
+        <div class="clearance-item">
+
+
+            <div class="clearance-icon">
+
+                <i class="fa-solid fa-money-bill-wave"></i>
+
+            </div>
+
+
+            <div>
+
+
+                <span>
+                    Financial Clearance
+                </span>
+
+
+                <strong id="selectedStudentFinancialStatus">
+                    Pending
+                </strong>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="clearance-item">
+
+
+            <div class="clearance-icon">
+
+                <i class="fa-solid fa-book"></i>
+
+            </div>
+
+
+            <div>
+
+
+                <span>
+                    Library Clearance
+                </span>
+
+
+                <strong id="selectedStudentLibraryStatus">
+                    Pending
+                </strong>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="clearance-item">
+
+
+            <div class="clearance-icon">
+
+                <i class="fa-solid fa-clipboard-check"></i>
+
+            </div>
+
+
+            <div>
+
+
+                <span>
+                    Overall Clearance
+                </span>
+
+
+                <strong id="selectedStudentClearanceStatus">
+                    Pending
+                </strong>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- STUDENT ACTIONS -->
+
+    <div class="form-actions">
+
+
+        <a href="requests.html"
+           class="btn btn-primary"
+           id="viewStudentRequestsBtn">
+
+            <i class="fa-solid fa-file-lines"></i>
+
+            View Document Requests
+
+        </a>
+
+
+        <a href="clearance.html"
+           class="btn btn-secondary"
+           id="viewStudentClearanceBtn">
+
+            <i class="fa-solid fa-clipboard-check"></i>
+
+            View Clearance
+
+        </a>
+
+
+    </div>
+
+
+</section>
+<!-- =====================================================
+     STUDENT RECORDS INFORMATION
+===================================================== -->
+
+<section class="dashboard-card information-card">
+
+
+    <div class="card-header">
+
+
+        <div>
+
+            <h2>
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                Student Records Guidelines
+
+            </h2>
+
+        </div>
+
+    </div>
+
+
+
+    <ul class="information-list">
+
+
+        <li>
+
+            <i class="fa-solid fa-check"></i>
+
+            Verify student information carefully before
+            processing any official document request.
+
+        </li>
+
+
+        <li>
+
+            <i class="fa-solid fa-check"></i>
+
+            Student IDs must contain exactly seven digits.
+
+        </li>
+
+
+        <li>
+
+            <i class="fa-solid fa-check"></i>
+
+            Full names and educational information should match
+            the student's official school records.
+
+        </li>
+
+
+        <li>
+
+            <i class="fa-solid fa-check"></i>
+
+            Review student requests and clearance records before
+            approving document releases.
+
+        </li>
+
+
+        <li>
+
+            <i class="fa-solid fa-check"></i>
+
+            Handle student records responsibly and protect
+            confidential information.
+
+        </li>
+
+
+    </ul>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     CLOSE MAIN CONTENT
+===================================================== -->
+
+</main>
+
+</div>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="portal-footer">
+
+
+    <div class="footer-brand">
+
+
+        <img src="../images/dlsjbc-logo.png"
+             alt="De La Salle John Bosco College Logo">
+
+
+        <div>
+
+            <strong>
+                ATCRS
+            </strong>
+
+
+            <span>
+                Registrar Administration Portal
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="footer-links">
+
+
+        <a href="../terms.html">
+            Terms of Use
+        </a>
+
+
+        <a href="../policy.html">
+            Policy
+        </a>
+
+
+        <a href="../index.html">
+            Public Website
+        </a>
+
+
+    </div>
+
+
+
+    <p>
+
+        © 2026 De La Salle John Bosco College.
+        All Rights Reserved.
+
+    </p>
+
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="../js/script.js"></script>
+
+
+</body>
+
+</html>
