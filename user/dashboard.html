@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard | ATCRS - DLSJBC</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body class="dashboard-page">
+
+
+<!-- =====================================================
+     STUDENT DASHBOARD HEADER
+     ===================================================== -->
+
+<header class="dashboard-header">
+
+    <div class="dashboard-header-left">
+
+        <a href="dashboard.html" class="dashboard-brand">
+
+            <div class="brand-logo">
+
+                <img src="../images/dlsjbc-logo.png"
+                     alt="De La Salle John Bosco College Logo">
+
+            </div>
+
+            <div class="brand-text">
+
+                <strong>ATCRS</strong>
+
+                <span>
+                    Student Portal
+                </span>
+
+            </div>
+
+        </a>
+
+    </div>
+
+
+    <div class="dashboard-header-right">
+
+        <div class="user-welcome">
+
+            <i class="fa-solid fa-user-circle"></i>
+
+            <div>
+
+                <span>
+                    Welcome
+                </span>
+
+                <strong id="dashboardStudentName">
+                    Student
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <button type="button"
+                class="logout-button"
+                id="studentLogoutBtn">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            Logout
+
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     DASHBOARD LAYOUT
+     ===================================================== -->
+
+<div class="dashboard-layout">
+
+
+    <!-- =================================================
+         SIDEBAR
+         ================================================= -->
+
+    <aside class="dashboard-sidebar">
+
+        <div class="sidebar-profile">
+
+            <div class="sidebar-profile-icon">
+
+                <i class="fa-solid fa-user"></i>
+
+            </div>
+
+            <div>
+
+                <strong id="sidebarStudentName">
+                    Student
+                </strong>
+
+                <span>
+                    Student Account
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <nav class="dashboard-nav">
+
+            <a href="dashboard.html"
+               class="active">
+
+                <i class="fa-solid fa-gauge-high"></i>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a href="profile.html">
+
+                <i class="fa-solid fa-user"></i>
+
+                <span>
+                    My Profile
+                </span>
+
+            </a>
+
+
+            <a href="request.html">
+
+                <i class="fa-solid fa-file-circle-plus"></i>
+
+                <span>
+                    Request Document
+                </span>
+
+            </a>
+
+
+            <a href="payment.html">
+
+                <i class="fa-solid fa-credit-card"></i>
+
+                <span>
+                    Payments
+                </span>
+
+            </a>
+
+
+            <a href="documents.html">
+
+                <i class="fa-solid fa-folder-open"></i>
+
+                <span>
+                    My Documents
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <a href="../index.html">
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>
+                    Public Website
+                </span>
+
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =================================================
+         MAIN CONTENT
+         ================================================= -->
+
+    <main class="dashboard-main">
+
+        <div class="dashboard-container">
+
+
+            <!-- PAGE HEADING -->
+
+            <div class="dashboard-page-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        STUDENT PORTAL
+                    </span>
+
+                    <h1>
+                        Student Dashboard
+                    </h1>
+
+                    <p>
+                        Manage your document requests, payments,
+                        clearance, and released documents.
+                    </p>
+
+                </div>
+
+
+                <a href="request.html"
+                   class="primary-button">
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    New Request
+
+                </a>
+
+            </div>
+
+
+            <!-- =============================================
+                 WELCOME CARD
+                 ============================================= -->
+
+            <section class="dashboard-welcome-card">
+
+                <div class="welcome-content">
+
+                    <span>
+                        Automated Transcript and Credential
+                        Retrieval System
+                    </span>
+
+                    <h2>
+                        Welcome back,
+                        <span id="welcomeStudentName">
+                            Student
+                        </span>!
+                    </h2>
+
+                    <p>
+                        You can submit school document requests,
+                        monitor their progress, check payment and
+                        clearance status, and access released
+                        documents from this dashboard.
+                    </p>
+
+                </div>
+
+
+                <div class="welcome-icon">
+
+                    <i class="fa-solid fa-graduation-cap"></i>
+
+                </div>
+
+            </section>
+                        <!-- =============================================
+                 SUMMARY CARDS
+                 ============================================= -->
+
+            <section class="dashboard-stat-grid">
+
+
+                <!-- TOTAL REQUESTS -->
+
+                <div class="dashboard-stat-card">
+
+                    <div class="stat-icon">
+
+                        <i class="fa-solid fa-file-lines"></i>
+
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span>
+                            Total Requests
+                        </span>
+
+                        <strong id="totalRequests">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PENDING -->
+
+                <div class="dashboard-stat-card">
+
+                    <div class="stat-icon">
+
+                        <i class="fa-solid fa-clock"></i>
+
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span>
+                            Pending Requests
+                        </span>
+
+                        <strong id="pendingRequests">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PROCESSING -->
+
+                <div class="dashboard-stat-card">
+
+                    <div class="stat-icon">
+
+                        <i class="fa-solid fa-spinner"></i>
+
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span>
+                            Processing
+                        </span>
+
+                        <strong id="processingRequests">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RELEASED -->
+
+                <div class="dashboard-stat-card">
+
+                    <div class="stat-icon">
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span>
+                            Released
+                        </span>
+
+                        <strong id="releasedRequests">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =============================================
+                 QUICK ACTIONS
+                 ============================================= -->
+
+            <section class="dashboard-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            QUICK ACTIONS
+                        </span>
+
+                        <h2>
+                            What would you like to do?
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="quick-action-grid">
+
+
+                    <!-- REQUEST -->
+
+                    <a href="request.html"
+                       class="quick-action-card">
+
+                        <div class="quick-action-icon">
+
+                            <i class="fa-solid fa-file-circle-plus"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Request a Document
+                            </h3>
+
+                            <p>
+                                Submit a new school document
+                                request online.
+                            </p>
+
+                        </div>
+
+                        <i class="fa-solid fa-arrow-right action-arrow"></i>
+
+                    </a>
+
+
+                    <!-- PAYMENT -->
+
+                    <a href="payment.html"
+                       class="quick-action-card">
+
+                        <div class="quick-action-icon">
+
+                            <i class="fa-solid fa-credit-card"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Check Payment
+                            </h3>
+
+                            <p>
+                                Review payment requirements
+                                and payment status.
+                            </p>
+
+                        </div>
+
+                        <i class="fa-solid fa-arrow-right action-arrow"></i>
+
+                    </a>
+
+
+                    <!-- DOCUMENTS -->
+
+                    <a href="documents.html"
+                       class="quick-action-card">
+
+                        <div class="quick-action-icon">
+
+                            <i class="fa-solid fa-folder-open"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                My Documents
+                            </h3>
+
+                            <p>
+                                View documents that have been
+                                approved and released.
+                            </p>
+
+                        </div>
+
+                        <i class="fa-solid fa-arrow-right action-arrow"></i>
+
+                    </a>
+
+
+                    <!-- PROFILE -->
+
+                    <a href="profile.html"
+                       class="quick-action-card">
+
+                        <div class="quick-action-icon">
+
+                            <i class="fa-solid fa-user-pen"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                My Profile
+                            </h3>
+
+                            <p>
+                                View and update your student
+                                account information.
+                            </p>
+
+                        </div>
+
+                        <i class="fa-solid fa-arrow-right action-arrow"></i>
+
+                    </a>
+
+                </div>
+
+            </section>
+                        <!-- =============================================
+                 REQUEST STATUS + CLEARANCE
+                 ============================================= -->
+
+            <section class="dashboard-two-column">
+
+
+                <!-- REQUEST STATUS -->
+
+                <div class="dashboard-panel">
+
+                    <div class="panel-heading">
+
+                        <div>
+
+                            <span class="section-label">
+                                REQUEST STATUS
+                            </span>
+
+                            <h2>
+                                Latest Request
+                            </h2>
+
+                        </div>
+
+                        <a href="request.html">
+                            View All
+                        </a>
+
+                    </div>
+
+
+                    <div id="latestRequestContainer"
+                         class="latest-request-container">
+
+                        <div class="empty-state">
+
+                            <div class="empty-state-icon">
+
+                                <i class="fa-solid fa-file-circle-plus"></i>
+
+                            </div>
+
+                            <h3>
+                                No Document Requests
+                            </h3>
+
+                            <p>
+                                You have not submitted a document
+                                request yet.
+                            </p>
+
+                            <a href="request.html"
+                               class="secondary-button">
+
+                                <i class="fa-solid fa-plus"></i>
+
+                                Create Request
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CLEARANCE -->
+
+                <div class="dashboard-panel">
+
+                    <div class="panel-heading">
+
+                        <div>
+
+                            <span class="section-label">
+                                CLEARANCE
+                            </span>
+
+                            <h2>
+                                Clearance Status
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="clearance-status-card">
+
+                        <div class="clearance-icon">
+
+                            <i class="fa-solid fa-clipboard-check"></i>
+
+                        </div>
+
+
+                        <div class="clearance-information">
+
+                            <span>
+                                Current Status
+                            </span>
+
+                            <strong id="clearanceStatus">
+                                Pending
+                            </strong>
+
+                            <p id="clearanceMessage">
+                                Your clearance status will be
+                                displayed here once reviewed.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="clearance-items">
+
+                        <div class="clearance-item">
+
+                            <span>
+
+                                <i class="fa-solid fa-circle-check"></i>
+
+                                Registrar Review
+
+                            </span>
+
+                            <strong id="registrarReviewStatus">
+                                Pending
+                            </strong>
+
+                        </div>
+
+
+                        <div class="clearance-item">
+
+                            <span>
+
+                                <i class="fa-solid fa-circle-check"></i>
+
+                                Financial Clearance
+
+                            </span>
+
+                            <strong id="financialClearanceStatus">
+                                Pending
+                            </strong>
+
+                        </div>
+
+
+                        <div class="clearance-item">
+
+                            <span>
+
+                                <i class="fa-solid fa-circle-check"></i>
+
+                                Library Clearance
+
+                            </span>
+
+                            <strong id="libraryClearanceStatus">
+                                Pending
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+                        <!-- =============================================
+                 RECENT REQUESTS
+                 ============================================= -->
+
+            <section class="dashboard-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            REQUEST HISTORY
+                        </span>
+
+                        <h2>
+                            Recent Document Requests
+                        </h2>
+
+                    </div>
+
+                    <a href="request.html"
+                       class="text-link">
+
+                        View All Requests
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table class="data-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Request ID
+                                </th>
+
+                                <th>
+                                    Document
+                                </th>
+
+                                <th>
+                                    Date
+                                </th>
+
+                                <th>
+                                    Payment
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Action
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="studentRequestsTable">
+
+                            <tr>
+
+                                <td colspan="6">
+
+                                    <div class="table-empty-state">
+
+                                        <i class="fa-solid fa-inbox"></i>
+
+                                        <span>
+                                            No requests available.
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- =============================================
+                 IMPORTANT INFORMATION
+                 ============================================= -->
+
+            <section class="dashboard-information-card">
+
+                <div class="information-icon">
+
+                    <i class="fa-solid fa-circle-info"></i>
+
+                </div>
+
+
+                <div class="information-content">
+
+                    <h3>
+                        Important Information
+                    </h3>
+
+                    <p>
+                        Make sure that your student information is
+                        accurate before submitting a document request.
+                        Requests may require payment and clearance
+                        verification before they can be released.
+                    </p>
+
+                </div>
+
+            </section>
+                    </div>
+
+    </main>
+
+</div>
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer class="dashboard-footer">
+
+    <div class="container">
+
+        <div class="dashboard-footer-content">
+
+            <p>
+                &copy; 2026 De La Salle John Bosco College.
+                All Rights Reserved.
+            </p>
+
+            <div>
+
+                <a href="../terms.html">
+                    Terms of Use
+                </a>
+
+                <a href="../policy.html">
+                    Policy
+                </a>
+
+                <a href="../index.html">
+                    Public Website
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+     ===================================================== -->
+
+<script src="../js/script.js"></script>
+
+</body>
+
+</html>
