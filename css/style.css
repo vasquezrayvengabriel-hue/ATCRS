@@ -288,25 +288,6 @@ ul{
     flex-shrink:0;
 
 }
-.footer-logo img{
-
-    width:40%;
-
-    height:40%;
-
-    max-width:40%;
-
-    max-height:40%;
-
-    object-fit:contain;
-
-    object-position:center;
-
-    display:block;
-
-}
-
-
 
 
 /* =========================================================
