@@ -288,49 +288,25 @@ ul{
     flex-shrink:0;
 
 }
-
-
-/* =========================================================
-   GLOBAL FOOTER LOGO
-   SMALL NORMAL SIZE
-   ========================================================= */
-
-.footer-logo{
-    width:40px !important;
-    height:40px !important;
-    min-width:40px;
-    min-height:40px;
-
-    border:2px solid var(--gold);
-    border-radius:50%;
-
-    background:var(--white);
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    overflow:hidden;
-    flex-shrink:0;
-
-    margin:0 auto 12px;
-}
-
-
 .footer-logo img{
-    width:100% !important;
-    height:100% !important;
 
-    max-width:100%;
-    max-height:100%;
+    width:40%;
+
+    height:40%;
+
+    max-width:40%;
+
+    max-height:40%;
 
     object-fit:contain;
+
     object-position:center;
 
     display:block;
 
-
 }
+
+
 
 
 /* =========================================================
