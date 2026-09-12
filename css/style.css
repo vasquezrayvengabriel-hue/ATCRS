@@ -263,13 +263,13 @@ ul{
 
 .brand-logo{
 
-    width:52px;
+    width:40px;
 
-    height:52px;
+    height:40px;
 
-    min-width:52px;
+    min-width:40px;
 
-    min-height:52px;
+    min-height:40px;
 
     border:2px solid var(--gold);
 
