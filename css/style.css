@@ -7215,6 +7215,35 @@ table{
 
 }
 
+/* =========================================================
+   SMALL FOOTER LOGO
+   ========================================================= */
+
+.footer-logo{
+    width:40px !important;
+    height:40px !important;
+    min-width:40px !important;
+    min-height:40px !important;
+
+    margin:0 auto 10px !important;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:2px solid var(--gold);
+    border-radius:50%;
+    overflow:hidden;
+    background:var(--white);
+}
+
+.footer-logo img{
+    width:100% !important;
+    height:100% !important;
+
+    object-fit:contain;
+    display:block;
+}
 
 /* =========================================================
    END OF ATCRS STYLE SHEET
